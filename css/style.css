@@ -1,0 +1,623 @@
+html {
+    box-sizing: border-box;
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    width: 100%;
+    font-family: 'TT Lakes', sans-serif;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    background-color: #F8F8F8;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .header {
+    background-color: white;
+  }
+
+
+
+@media (min-width: 320px) {
+
+    /* Верхнее меню */  
+
+    .upper-menu {
+        display: flex;
+        width: 100%;
+        height: 88px;
+        flex-wrap: nowrap;
+        align-items: baseline;
+        border-bottom: 1px solid #D9FFF5;
+    }
+
+    .upper-menu__section1--position {
+        display: flex;
+        width: 186px;
+        height: 88px;    
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        margin-right: auto;
+        align-items: center;
+    }
+
+    .upper-menu__section2--position {
+        display: none;
+    }
+    .upper-menu__section3--position {
+        display: flex;
+        width: 134px;
+        height: 88px;    
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .upper-menu__section3--position::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 32px;
+        background-color: #EAEAEA;
+        border-radius: 1px;
+        margin-right: 133px;
+    }
+
+    /* Кнопки меню */
+
+    .button-menu {
+        display: flex;
+        align-self: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #FF3E79;
+        border: none;
+        cursor: pointer;
+        background-size: auto;
+        background-position: center;
+        background-repeat: no-repeat;    
+    }
+
+    .button-menu__logo {
+        display: flex;
+        width: 98px;
+        height: 52px;
+        background-image: url('../icons/logo.svg') ;
+        border: none;
+        cursor: pointer;
+        background-size: auto;
+        background-position: center;
+        background-repeat: no-repeat;  
+
+    }
+
+    .button-menu:link {
+        outline: 2px solid transparent;
+    }
+
+    .button-menu:focus {
+        outline: 2px solid #B8FFEC;
+    }
+
+    .button-menu:hover{
+        outline: 2px solid #B8FFEC;
+    }  
+
+    .button-menu--button--burger {
+        background-image: url("../icons/burger.svg");
+    }
+
+    .button-menu--button--repair {
+        background-image: url("../icons/repair.svg");
+        margin-left: 4px;
+    }
+    .button-menu--button--checkstatus {
+        background-image: url("../icons/checkstatus.svg");
+    }
+
+    /* Визуально скрытый текст*/
+
+    .span--hidden {
+        font-size: 0;
+        color: transparent;
+    }
+
+    /* Main */
+
+    .main {
+        background-color: #F8F8F8;
+    }
+
+    /* Заголовок main*/
+
+    .main-title {
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+    }
+
+    .main-title__h1 {
+        font-size: 28px;
+        width: 297px;
+        font-style: #1B1C21;
+        line-height: 40px;
+        letter-spacing: -0.6px;
+    }
+
+    .main-title__section1::before {
+        content: "";
+        position: absolute;
+        width: 4px;
+        height: 40px;
+        background-image: url('../icons/highlight.svg');
+        left: 0;
+    }
+
+    .main-title__section1--position {
+        margin: 24px 16px 24px 16px;
+    }
+
+    .main-title__section2 {
+        display: none;
+    }
+
+    .main-title__section3 {
+        display: none;
+    }
+
+    /* Меню Main */
+
+    .main-menu {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow: hidden;
+        
+    }
+    .main-menu--position {
+        margin-left: 16px;
+        margin-bottom: 24px;  
+    }
+
+    .main-menu__link {
+        display: flex;
+        width: auto;
+        text-decoration: none;
+        font-style: 'TT Lakes', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        color: #7E7E82;
+        white-space: nowrap;
+    }
+
+    .main-menu__link--position {
+        padding: 6px 16px 6px 14px;
+        margin: 2px;
+    }
+
+    .main-menu__link--position:nth-child(1),
+    .main-menu__link--position:nth-child(5) {
+        order: 1;
+    }
+
+    .main-menu__link:focus {
+        background-color: #fff;
+        outline: 2px solid #B8FFEC;
+        border-radius: 6px;
+    }
+
+    .main-menu__link:hover {
+        background-color: #fff;
+        outline: 2px solid #B8FFEC;
+        border-radius: 6px;
+    }       
+
+    .main-menu__link--position:nth-child(2) {
+        background-color: #fff;
+        outline: 2px solid #B8FFEC;
+        border-radius: 6px;                 
+    }   
+
+    .main-menu__fade {
+        position: absolute;
+        width: 24px;
+        height: 40px;
+        right: 0;
+        background-image: url('../icons/fade.png');  
+    }
+
+    /* О компании */
+
+    .company-info {
+        display: flex;   
+        flex-direction: column;
+    }
+
+    .company-info__description--position {
+        margin: 0 16px 16px 16px;
+    }
+
+    .company-info__text {
+        height: 90px; 
+        position: relative;
+        font-style: 'TT Lakes', sans-serif;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.2px;
+        color: #1B1C21;
+        overflow: hidden;
+    }
+
+
+    .company-info__link {
+        display: inline-block;
+        text-decoration: none;
+        font-style: 'TT Lakes', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        color: #1B1C21;
+        position: relative;
+    }
+
+    .company-info__link--position {
+        margin: 16px 0 0 32px;
+}
+    .company-info__link::before {
+        position: absolute;
+        content: "";
+        width: 8px;
+        height: 11px;
+        left: -24px;
+        top: 6px;
+        background-image: url("../icons/expand.svg");
+}
+
+    .content__image {
+        width: 100%;
+         height: auto;
+    }
+
+}
+
+
+@media (min-width: 768px) {
+
+    /*Верхнее меню */
+
+    .upper-menu__section1--position {
+        display: flex;
+        width: 203px;
+        height: 88px;    
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        margin-right: auto;
+        align-items: center;
+        padding-left: 24px;
+    }
+    .upper-menu__section1--position::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 32px;
+        background-color: #EAEAEA;
+        border-radius: 1px;
+        margin-left: 60px;
+        
+    }
+
+    .upper-menu__section2--position {
+        display: flex;
+        width: 188px;
+        height: 88px;    
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        margin-left: auto;
+        align-items: center;
+    }
+
+    .upper-menu__section3--position {
+        width: 142px;
+    }    
+    .upper-menu__section3--position::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 32px;
+        background-color: #EAEAEA;
+        border-radius: 1px;
+        margin-right: 140px;
+    }
+
+    .button-menu--button--checkstatus {
+        background-image: url("../icons/checkstatus.svg");
+        margin-right: 8px;  
+    }
+    .button-menu--button--call {
+        background-image: url("../icons/call.svg");
+    }
+    .button-menu--button--chat {
+        background-image: url("../icons/chat.svg");
+    }
+    .button-menu--button--profile {
+        background-image: url("../icons/profile.svg");
+        margin-right: 4px;  
+    }
+
+    /* Меню Main */
+
+    .main-title__section2 {
+        display: none;
+    }
+    .main-title__section3 {
+        display: none;
+    }
+
+    .main-title__section1--position {
+        margin: 24px;
+        margin-bottom: 32px;
+    }
+
+    .button-menu--button--repair {
+        background-image: url("../icons/repair.svg");
+        margin-left: 4px;
+    }
+    .main-menu--position {
+        margin-left: 24px;
+        margin-bottom: 32px;  
+    }
+
+    .main-menu__link--position:nth-child(1) {
+         order: 1;
+    }
+    .main-menu__link--position:nth-child(2),
+    .main-menu__link--position:nth-child(3),
+    .main-menu__link--position:nth-child(4),
+    .main-menu__link--position:nth-child(6) {
+         order: -1;
+    }
+
+    .main-menu__fade {
+        position: absolute;
+        width: 20px;
+        height: 40px;
+        right: 0;
+        background-image: url('../icons/fade-big.png');  
+    }
+
+    /* О компании*/
+
+    .company-info {
+        display: flex;   
+        flex-direction: row;
+        justify-content: space-between;              
+    }
+
+    .company-info--position {
+        margin: 32px 24px 0 24px;
+
+    }
+
+
+    .company-info__description {
+        flex-basis: 50%;
+    }
+
+    .company-info__description--position {
+        margin: 0 24px 0 0;
+
+    }
+
+    .company-info__text {
+        line-height: 20px;
+        height: 160px; 
+    }
+    
+    .company-info__link {
+         display: inline-flex;
+
+    }
+
+    .company-info__link--position {
+        margin: 10px 0 0 32px;
+    }
+
+    
+    .company-info__link::before {
+        position: absolute;
+        content: "";
+        width: 8px;
+        height: 11px;
+        left: -24px;
+        top: 6px;
+    }
+
+    .company-info__wrapper {
+        flex-basis: 50%;
+    }
+
+    .company-info__wrapper--position {
+        margin-left: 24px;
+    }
+
+  
+    .content__image {
+        min-width: 360px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .content__image--border {
+        border-radius: 5px;
+    }
+
+}
+
+
+
+@media (min-width: 1120px) {
+
+    body {
+        max-width: 1120px;
+        margin: auto;
+    }
+
+    /* Верхнее меню */
+
+    .header {
+        display: none;
+    }
+
+    /* Заголовок Main */
+
+    .main-title {
+        display: flex;
+        width: 100%;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .main-title__section1 {
+        display: flex;
+        width: 233px;
+    }
+    .main-title__section1::before {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 40px;
+        background-color: #41F6D7;
+        border-radius: 2px;
+        left: 0;
+    }
+    .main-title__section1--position {
+        margin-top: 42px;
+        margin-left: 32px;
+        margin-bottom: 8px;
+    }
+    .main-title__section2 {
+        display: flex;
+        width: 172px;
+        height: 40px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .main-title__section2--position {
+        margin-left: auto;
+        margin-top: 32px;
+    }
+    .main-title__section3 {
+        display: flex;
+        width: 176px;
+        height: 40px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .main-title__section3--position {
+        margin-top: 32px;
+        margin-right: 24px;
+        margin-left: 32px;
+    }
+
+    .main-title__text  {
+        font-style: 'TT Lakes', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: -0.2px;;
+    }
+
+    /* Меню Main */
+
+    .main-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .main-menu--position {
+        margin-left: 32px;
+        margin-bottom: 10px;
+        
+    }
+
+    .main-menu__link--position {
+        padding: 6px 25px 6px 12px;
+    }
+
+    .main-menu__link:nth-child(3) {
+        display: none;
+    }
+
+    .main-menu__link--position:nth-child(1) {
+        background-color: #fff;
+        outline: 2px solid #B8FFEC;
+        border-radius: 6px;                 
+    }
+    .main-menu__link--position:nth-child(2) {
+        background-color: #F8F8F8;;
+        outline: transparent;
+        border-radius: transparent;                 
+    } 
+
+    .main-menu__link--position:nth-child(1),
+    .main-menu__link--position:nth-child(2),
+    .main-menu__link--position:nth-child(5),
+    .main-menu__link--position:nth-child(4),
+    .main-menu__link--position:nth-child(6)
+    {
+        order: 0;
+    }
+
+    .main-menu__link:focus {
+        background-color: #fff;
+        outline: 2px solid #B8FFEC;
+        border-radius: 6px;
+        
+    }
+
+    .main-menu__link:hover {
+        background-color: #fff;
+        outline: 2px solid #B8FFEC;
+        border-radius: 6px;
+    }      
+
+    /* О компании */
+
+    .company-info--position {
+        margin: 8px 36px 0 34px;      
+    }
+
+    .company-info__description--position {
+        margin: 8px 16px 0 0;
+    
+    }
+
+    .company-info__wrapper--position {
+        margin-left: 24px;
+        }
+
+
+}
