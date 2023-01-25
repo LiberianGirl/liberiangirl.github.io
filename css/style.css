@@ -5,12 +5,23 @@ html {
     box-sizing: inherit;
 }
 
+/* Скрываем scrollbar для Chrome, Safari и Opera */
+*::-webkit-scrollbar {
+    width: 0;
+  }
+
+  /* Скрываем scrollbar для IE, Edge и Firefox */
+* {
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-color: transparent transparent ;/* Firefox */
+  }
+
 body {
     width: 100%;
     font-family: 'TT Lakes', sans-serif;
     font-weight: normal;
     margin: 0;
-    padding: 0;
+    padding: 0; 
     background-color: #F8F8F8;
 }
 * {
@@ -32,8 +43,6 @@ button {
     background-color: white;
   }
 
-
-
 @media (min-width: 320px) {
 
     /* Верхнее меню */  
@@ -47,7 +56,7 @@ button {
         border-bottom: 1px solid #D9FFF5;
     }
 
-    .upper-menu__section1--position {
+    .upper-menu__wrapper-left {
         display: flex;
         width: 186px;
         height: 88px;    
@@ -57,10 +66,10 @@ button {
         align-items: center;
     }
 
-    .upper-menu__section2--position {
+    .upper-menu__wrapper-center {
         display: none;
     }
-    .upper-menu__section3--position {
+    .upper-menu__wrapper-right {
         display: flex;
         width: 134px;
         height: 88px;    
@@ -69,7 +78,7 @@ button {
         align-items: center;
     }
 
-    .upper-menu__section3--position::after {
+    .upper-menu__wrapper-right::after {
         content: "";
         position: absolute;
         width: 2px;
@@ -95,7 +104,7 @@ button {
         background-repeat: no-repeat;    
     }
 
-    .button-menu__logo {
+    .upper-menu__logo {
         display: flex;
         width: 98px;
         height: 52px;
@@ -105,38 +114,22 @@ button {
         background-size: auto;
         background-position: center;
         background-repeat: no-repeat;  
-
-    }
-
-    .button-menu:link {
-        outline: 2px solid transparent;
     }
 
     .button-menu:focus {
         outline: 2px solid #B8FFEC;
     }
 
-    .button-menu:hover{
-        outline: 2px solid #B8FFEC;
-    }  
-
-    .button-menu--button--burger {
+    .button-menu--button-burger {
         background-image: url("../icons/burger.svg");
     }
 
-    .button-menu--button--repair {
+    .button-menu--button-repair {
         background-image: url("../icons/repair.svg");
         margin-left: 4px;
     }
-    .button-menu--button--checkstatus {
+    .button-menu--button-checkstatus {
         background-image: url("../icons/checkstatus.svg");
-    }
-
-    /* Визуально скрытый текст*/
-
-    .span--hidden {
-        font-size: 0;
-        color: transparent;
     }
 
     /* Main */
@@ -145,7 +138,7 @@ button {
         background-color: #F8F8F8;
     }
 
-    /* Заголовок main*/
+    /* Заголовок Main*/
 
     .main-title {
         display: flex;
@@ -161,7 +154,11 @@ button {
         letter-spacing: -0.6px;
     }
 
-    .main-title__section1::before {
+    .main-title__wrapper-title{
+        margin: 24px 16px 24px 16px;
+    }
+
+    .main-title__h1::before {
         content: "";
         position: absolute;
         width: 4px;
@@ -170,74 +167,63 @@ button {
         left: 0;
     }
 
-    .main-title__section1--position {
-        margin: 24px 16px 24px 16px;
-    }
-
-    .main-title__section2 {
+    .main-title__wrapper-repair {
         display: none;
     }
 
-    .main-title__section3 {
+    .main-title__wrapper-checkstatus {
         display: none;
     }
 
     /* Меню Main */
 
-    .main-menu {
+    .menu {
         display: flex;
         flex-wrap: nowrap;
         justify-content: flex-start;
-        overflow: hidden;
+        overflow: scroll;
         
     }
-    .main-menu--position {
+    .main__menu {
         margin-left: 16px;
-        margin-bottom: 24px;  
+        margin-bottom: 7px;
     }
-
-    .main-menu__link {
-        display: flex;
-        width: auto;
+    
+    .link {
         text-decoration: none;
         font-style: 'TT Lakes', sans-serif;
         font-size: 16px;
         font-weight: 500;
         line-height: 24px;
         letter-spacing: -0.2px;
-        color: #7E7E82;
         white-space: nowrap;
     }
+        
+    .menu__link:nth-child(1) {
+        background-color: #fff;
+        outline: 2px solid #B8FFEC;
+        border-radius: 6px;
+    } 
 
-    .main-menu__link--position {
+    .menu__link {
+        color: #7E7E82;
         padding: 6px 16px 6px 14px;
         margin: 2px;
     }
 
-    .main-menu__link--position:nth-child(1),
-    .main-menu__link--position:nth-child(5) {
-        order: 1;
-    }
-
-    .main-menu__link:focus {
+    .menu__link:focus {
         background-color: #fff;
         outline: 2px solid #B8FFEC;
         border-radius: 6px;
     }
 
-    .main-menu__link:hover {
+    .menu__link:hover {
         background-color: #fff;
         outline: 2px solid #B8FFEC;
         border-radius: 6px;
     }       
 
-    .main-menu__link--position:nth-child(2) {
-        background-color: #fff;
-        outline: 2px solid #B8FFEC;
-        border-radius: 6px;                 
-    }   
-
-    .main-menu__fade {
+    .menu__fade {
         position: absolute;
         width: 24px;
         height: 40px;
@@ -247,16 +233,16 @@ button {
 
     /* О компании */
 
-    .company-info {
+    .main__content {
         display: flex;   
         flex-direction: column;
     }
 
-    .company-info__description--position {
+    .content__wrapper-left {
         margin: 0 16px 16px 16px;
     }
 
-    .company-info__text {
+    .content__text {
         height: 90px; 
         position: relative;
         font-style: 'TT Lakes', sans-serif;
@@ -265,26 +251,17 @@ button {
         line-height: 18px;
         letter-spacing: 0.2px;
         color: #1B1C21;
-        overflow: hidden;
+        overflow: auto;
     }
 
-
-    .company-info__link {
+    .content__link {
         display: inline-block;
-        text-decoration: none;
-        font-style: 'TT Lakes', sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 24px;
-        letter-spacing: -0.2px;
         color: #1B1C21;
         position: relative;
+        margin: 16px 0 0 32px;
     }
 
-    .company-info__link--position {
-        margin: 16px 0 0 32px;
-}
-    .company-info__link::before {
+    .content__link::before {
         position: absolute;
         content: "";
         width: 8px;
@@ -296,7 +273,7 @@ button {
 
     .content__image {
         width: 100%;
-         height: auto;
+        height: auto;
     }
 
 }
@@ -306,7 +283,7 @@ button {
 
     /*Верхнее меню */
 
-    .upper-menu__section1--position {
+    .upper-menu__wrapper-left {
         display: flex;
         width: 203px;
         height: 88px;    
@@ -316,18 +293,17 @@ button {
         align-items: center;
         padding-left: 24px;
     }
-    .upper-menu__section1--position::after {
+    .upper-menu__wrapper-left::after {
         content: "";
         position: absolute;
         width: 2px;
         height: 32px;
         background-color: #EAEAEA;
         border-radius: 1px;
-        margin-left: 60px;
-        
+        margin-left: 60px;   
     }
 
-    .upper-menu__section2--position {
+    .upper-menu__wrapper-center {
         display: flex;
         width: 188px;
         height: 88px;    
@@ -337,10 +313,10 @@ button {
         align-items: center;
     }
 
-    .upper-menu__section3--position {
+    .upper-menu__wrapper-right {
         width: 142px;
     }    
-    .upper-menu__section3--position::after {
+    .upper-menu__wrapper-right::after {
         content: "";
         position: absolute;
         width: 2px;
@@ -350,55 +326,44 @@ button {
         margin-right: 140px;
     }
 
-    .button-menu--button--checkstatus {
+    .button-menu--button-checkstatus {
         background-image: url("../icons/checkstatus.svg");
         margin-right: 8px;  
     }
-    .button-menu--button--call {
+    .button-menu--button-call {
         background-image: url("../icons/call.svg");
     }
-    .button-menu--button--chat {
+    .button-menu--button-chat {
         background-image: url("../icons/chat.svg");
     }
-    .button-menu--button--profile {
+    .button-menu--button-profile {
         background-image: url("../icons/profile.svg");
         margin-right: 4px;  
     }
 
     /* Меню Main */
 
-    .main-title__section2 {
+    .main-title__wrapper-repair {
         display: none;
     }
-    .main-title__section3 {
+    .main-title__wrapper-checkstatus {
         display: none;
     }
 
-    .main-title__section1--position {
+    .main-title__wrapper-title {
         margin: 24px;
         margin-bottom: 32px;
     }
 
-    .button-menu--button--repair {
+    .button-menu--button-repair {
         background-image: url("../icons/repair.svg");
         margin-left: 4px;
     }
-    .main-menu--position {
+    .main__menu {
         margin-left: 24px;
-        margin-bottom: 32px;  
     }
 
-    .main-menu__link--position:nth-child(1) {
-         order: 1;
-    }
-    .main-menu__link--position:nth-child(2),
-    .main-menu__link--position:nth-child(3),
-    .main-menu__link--position:nth-child(4),
-    .main-menu__link--position:nth-child(6) {
-         order: -1;
-    }
-
-    .main-menu__fade {
+    .menu__fade {
         position: absolute;
         width: 20px;
         height: 40px;
@@ -408,43 +373,28 @@ button {
 
     /* О компании*/
 
-    .company-info {
-        display: flex;   
+    .main__content { 
         flex-direction: row;
-        justify-content: space-between;              
+        justify-content: space-between;  
+        margin: 15px 24px 0 24px;            
     }
 
-    .company-info--position {
-        margin: 32px 24px 0 24px;
-
-    }
-
-
-    .company-info__description {
+    .content__wrapper-left {
         flex-basis: 50%;
-    }
-
-    .company-info__description--position {
         margin: 0 24px 0 0;
-
     }
 
-    .company-info__text {
+    .content__text {
+        height: 160px;
         line-height: 20px;
-        height: 160px; 
     }
     
-    .company-info__link {
-         display: inline-flex;
-
-    }
-
-    .company-info__link--position {
-        margin: 10px 0 0 32px;
+    .content__link {
+         margin: 10px 0 0 32px;
     }
 
     
-    .company-info__link::before {
+    .content__link::before {
         position: absolute;
         content: "";
         width: 8px;
@@ -453,22 +403,15 @@ button {
         top: 6px;
     }
 
-    .company-info__wrapper {
+    .content__wrapper-right {
         flex-basis: 50%;
-    }
-
-    .company-info__wrapper--position {
         margin-left: 24px;
     }
-
   
     .content__image {
         min-width: 360px;
         max-width: 100%;
         height: auto;
-    }
-
-    .content__image--border {
         border-radius: 5px;
     }
 
@@ -498,44 +441,40 @@ button {
         align-items: center;
     }
 
-    .main-title__section1 {
+    .main-title__wrapper-title {
         display: flex;
-        width: 233px;
+        width: 236px;
+        margin-top: 42px;
+        margin-left: 32px;
+        margin-bottom: 8px;
     }
-    .main-title__section1::before {
+
+    .main-title__h1::before {
         content: "";
         position: absolute;
         width: 3px;
         height: 40px;
         background-color: #41F6D7;
         border-radius: 2px;
-        left: 0;
+        left: 0px;
     }
-    .main-title__section1--position {
-        margin-top: 42px;
-        margin-left: 32px;
-        margin-bottom: 8px;
-    }
-    .main-title__section2 {
+
+    .main-title__wrapper-repair {
         display: flex;
         width: 172px;
         height: 40px;
         align-items: center;
         justify-content: space-between;
-    }
-
-    .main-title__section2--position {
         margin-left: auto;
         margin-top: 32px;
     }
-    .main-title__section3 {
+
+    .main-title__wrapper-checkstatus {
         display: flex;
         width: 176px;
         height: 40px;
         align-items: center;
         justify-content: space-between;
-    }
-    .main-title__section3--position {
         margin-top: 32px;
         margin-right: 24px;
         margin-left: 32px;
@@ -551,54 +490,27 @@ button {
 
     /* Меню Main */
 
-    .main-menu {
+    .menu {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
+        flex-wrap: wrap;        
     }
 
-    .main-menu--position {
+    .main__menu {
         margin-left: 32px;
-        margin-bottom: 10px;
-        
+        margin-bottom: 0;
     }
 
-    .main-menu__link--position {
+    .menu__link {
         padding: 6px 25px 6px 12px;
     }
 
-    .main-menu__link:nth-child(3) {
-        display: none;
-    }
-
-    .main-menu__link--position:nth-child(1) {
+    .menu__link:focus {
         background-color: #fff;
         outline: 2px solid #B8FFEC;
-        border-radius: 6px;                 
-    }
-    .main-menu__link--position:nth-child(2) {
-        background-color: #F8F8F8;;
-        outline: transparent;
-        border-radius: transparent;                 
-    } 
-
-    .main-menu__link--position:nth-child(1),
-    .main-menu__link--position:nth-child(2),
-    .main-menu__link--position:nth-child(5),
-    .main-menu__link--position:nth-child(4),
-    .main-menu__link--position:nth-child(6)
-    {
-        order: 0;
+        border-radius: 6px;  
     }
 
-    .main-menu__link:focus {
-        background-color: #fff;
-        outline: 2px solid #B8FFEC;
-        border-radius: 6px;
-        
-    }
-
-    .main-menu__link:hover {
+    .menu__link:hover {
         background-color: #fff;
         outline: 2px solid #B8FFEC;
         border-radius: 6px;
@@ -606,18 +518,17 @@ button {
 
     /* О компании */
 
-    .company-info--position {
-        margin: 8px 36px 0 34px;      
+    .main__content {
+        margin: -7px 36px 0 34px;    
     }
 
-    .company-info__description--position {
+    .content__wrapper-left {
         margin: 8px 16px 0 0;
-    
     }
 
-    .company-info__wrapper--position {
+    .content__wrapper-right {
         margin-left: 24px;
-        }
+    }
 
 
 }

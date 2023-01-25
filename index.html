@@ -12,68 +12,61 @@
   <body>
     <header class="header">
       <nav class="upper-menu">
-        <div class="upper-menu__section1 upper-menu__section1--position">
-          <button class="button-menu button-menu--button--burger" type="button">
-            <span class="span span--hidden">Боковое меню</span>
+        <div class="upper-menu__wrapper-left">
+          <button aria-label="Боковое меню" class="button-menu button-menu--button-burger" type="button">
           </button>
-          <a class="button-menu__logo" href="#"><img src=".\icons\logo.svg" alt="Логотип компании CPS"></a>
+          <a class="upper-menu__logo" href="#"><img src=".\icons\logo.svg" alt="Логотип компании CPS"></a>
         </div>
-        <div class="upper-menu__section2 upper-menu__section2--position">
-          <button class="button-menu button-menu--button--call" type="button">
-            <span class="span span--hidden">Позвонить нам</span>
+        <div class="upper-menu__wrapper-center">
+          <button aria-label="Позвонить нам" class="button-menu button-menu--button-call" type="button">
           </button>
-          <button class="button-menu button-menu--button--chat" type="button">
-            <span class="span span--hidden">Написать сообщение</span>
+          <button aria-label="Написать сообщение" class="button-menu button-menu--button-chat" type="button">
           </button>
-          <button class="button-menu button-menu--button--profile" type="button">
-            <span class="span span--hidden">Профиль</span>
+          <button aria-label="Профиль" class="button-menu button-menu--button-profile" type="button">
           </button>
         </div>
-        <div class="upper-menu__section3 upper-menu__section3--position">
-          <button class="button-menu button-menu--button--repair" type="button">
-            <span class="span span--hidden">Оставить заявку</span>
+        <div class="upper-menu__wrapper-right">
+          <button aria-label="Оставить заявку" class="button-menu button-menu--button-repair" type="button">
           </button>
-          <button class="button-menu button-menu--button--checkstatus" type="button">
-            <span class="span span--hidden">Узнать статус ремонта</span>
+          <button  aria-label="Узнать статус ремонта" class="button-menu button-menu--button-checkstatus" type="button">
           </button>
         </div>
       </nav>
     </header>
     <main class="main">
       <div class="main-title">
-        <div class="main-title__section1 main-title__section1--position">   
+        <div class="main-title__wrapper-title"> 
         <h1 class="main-title__h1">Услуги и сервисы</h1>
         </div>
-        <div class="main-title__section2 main-title__section2--position">
+        <div class="main-title__wrapper-repair">
           <span class="main-title__text">Оставить заявку</span>
-          <button class="button-menu button-menu--position button-menu--button--repair">
+          <button class="button-menu button-menu--button-repair">
           </button>
         </div>   
-        <div class="main-title__section3 main-title__section3--position">
+        <div class="main-title__wrapper-checkstatus">
           <span class="main-title__text">Статус ремонта</span>
-          <button class="button-menu button-menu--position button-menu--button--checkstatus">
+          <button class="button-menu button-menu--button-checkstatus">
           </button>
         </div>
       </div>      
-      <nav class="main-menu main-menu--position">
-        <a class="main-menu__link main-menu__link--position" href="#">Ремонтируемые бренды</a>
-        <a class="main-menu__link main-menu__link--position" href="#">Ремонтируемые устройства</a>
-        <a class="main-menu__link main-menu__link--position" href="#">Дополнительные услуги</a>
-        <a class="main-menu__link main-menu__link--position" href="#">Цены на услуги</a>
-        <a class="main-menu__link main-menu__link--position" href="#">Адреса сервисных центров</a>
-        <a class="main-menu__link main-menu__link--position" href="#">Специальные цены</a>
-        <a class="main-menu__link main-menu__link--position" href="#">Отзывы</a>
-        <div class="main-menu__fade"></div>
+      <nav class="main__menu menu">
+        <a class="menu__link link" href="#">Ремонтируемые бренды</a>
+        <a class="menu__link link" href="#">Ремонтируемые устройства</a>
+        <a class="menu__link link" href="#">Цены на услуги</a>
+        <a class="menu__link link" href="#">Адреса сервисных центров</a>
+        <a class="menu__link link" href="#">Специальные цены</a>
+        <a class="menu__link link" href="#">Отзывы</a>
+        <div class="menu__fade"></div>
       </nav>
-      <section class="company-info company-info--position">
-        <div class="company-info__description company-info__description--position">
-          <p class="company-info__text">Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.
+      <section class="main__content content">
+        <div class="content__wrapper-left">
+          <p class="content__text">Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.
           <br><br>
           Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.</p>
-          <a class="company-info__link company-info__link--position" href="#">Читать далее</a>
+          <a class="content__link link" href="#">Читать далее</a>
         </div> 
-        <div class="company-info__wrapper company-info__wrapper--position">
-          <img class="content__image content__image--border" src="..\img\cps-logo.jpg" alt="Логотип компании CPS салатового цвета"> 
+        <div class="content__wrapper-right">
+          <img class="content__image " src="..\img\cps-logo.jpg" alt="Логотип компании CPS салатового цвета"> 
         </div>
       </section>
     </main>
