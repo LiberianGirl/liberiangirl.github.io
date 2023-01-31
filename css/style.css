@@ -29,6 +29,9 @@ body {
     padding: 0;
     border: 0;
 }
+li {
+    list-style: none;
+}
 
 button {
     padding: 0;
@@ -88,23 +91,7 @@ button {
         margin-right: 133px;
     }
 
-    /* Кнопки меню */
-
-    .button-menu {
-        display: flex;
-        align-self: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: #FF3E79;
-        border: none;
-        cursor: pointer;
-        background-size: auto;
-        background-position: center;
-        background-repeat: no-repeat;    
-    }
-
-    .upper-menu__logo {
+    .logo {
         display: flex;
         width: 98px;
         height: 52px;
@@ -116,21 +103,67 @@ button {
         background-repeat: no-repeat;  
     }
 
-    .button-menu:focus {
-        outline: 2px solid #B8FFEC;
+    /* Кнопки меню */
+
+    .button-menu {
+        display: flex;
+        align-self: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #ff3e79;
+        border: none;
+        cursor: pointer;
+        background-size: auto;
+        background-position: center;
+        background-repeat: no-repeat;    
     }
 
+
+    .button-menu--open-burger {
+        background-image: url("../icons/open-burger.svg");
+    }
+    .button-menu--close-burger {
+        background-image: url("../icons/close-burger.svg");
+    }
     .button-menu--button-burger {
         background-image: url("../icons/burger.svg");
     }
-
-    .button-menu--button-repair {
+    .button-menu--call {
+        background-image: url("../icons/call.svg");
+    }
+    .button-menu--chat {
+        background-image: url("../icons/chat.svg");
+    }
+    .button-menu--profile {
+        background-image: url("../icons/profile.svg");
+        margin-right: 4px;  
+    }
+    .button-menu--repair {
         background-image: url("../icons/repair.svg");
         margin-left: 4px;
     }
-    .button-menu--button-checkstatus {
+    .button-menu--checkstatus {
         background-image: url("../icons/checkstatus.svg");
     }
+    .button-menu--search {
+        background-image: url("../icons/search.svg");
+    }
+
+    .button-menu:hover {
+        background-color: rgb(255, 62, 121, 0.4);
+        transition-property: background-color;
+        transition-duration: 500ms;         
+    }
+
+    .button-menu:focus {
+        outline: 2px solid transparent;
+        background-color: #41F6D7;
+        transition-property: background-color;
+        transition-duration: 700ms;  
+    }
+
+
 
     /* Main */
 
@@ -197,38 +230,59 @@ button {
         line-height: 24px;
         letter-spacing: -0.2px;
         white-space: nowrap;
+        color: #1B1C21;
     }
-        
-    .menu__link:nth-child(1) {
+    
+    .link:hover {
+        color: #FF3E79;
+        transition-property: color;
+        transition-duration: 500ms;
+;
+    }
+    .link:focus {
+        color: #7E7E82;
+        transition-property: color;
+        transition-duration: 500ms;   
+    }
+
+    .menu__link {
+        display: block;
+        color: #7E7E82;
+        padding: 6px 16px 6px 14px;
+        margin: 2px;
+        outline: 2px solid transparent;
+    }
+
+    .menu__link--active {
         background-color: #fff;
         outline: 2px solid #B8FFEC;
         border-radius: 6px;
     } 
 
-    .menu__link {
-        color: #7E7E82;
-        padding: 6px 16px 6px 14px;
-        margin: 2px;
-    }
+    .menu__link:hover {
+        background-color: #fff;
+        outline: 2px solid #f76b95;
+        border-radius: 6px;
+        transition-property: outline-color, color;
+        transition-duration: 2s, 2s;
+    }  
 
     .menu__link:focus {
         background-color: #fff;
         outline: 2px solid #B8FFEC;
         border-radius: 6px;
+        transition-property: outline-color, color;
+        transition-duration: 1s, 2s;   
     }
 
-    .menu__link:hover {
-        background-color: #fff;
-        outline: 2px solid #B8FFEC;
-        border-radius: 6px;
-    }       
-
-    .menu__fade {
+    .main__fade {
         position: absolute;
         width: 24px;
         height: 40px;
         right: 0;
+        top: 175px;
         background-image: url('../icons/fade.png');  
+        
     }
 
     /* О компании */
@@ -274,6 +328,138 @@ button {
     .content__image {
         width: 100%;
         height: auto;
+    }
+
+    /* Боковое меню (Side-Menu)*/
+
+    .side-menu {
+        display: flex;
+        flex-direction: column;
+        width: 320px;
+        height: 100%;
+        position: absolute;
+        z-index: 5;
+        background: white;
+        top: 0;
+        left: 0;
+        padding: 0 24px 32px 24px;
+        box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 
+                     16px 0px 52px rgba(14, 24, 80, 0.2);
+        overflow: hidden;
+        }
+
+    /* Верхнее меню Side-Menu */
+
+    .top-menu {
+        display: flex;
+        width: 100%;
+        height: 88px;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 32px;
+    }
+
+    .top-menu__wrapper-left {
+        display: flex;
+        width: 154px;
+        height: 88px;    
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .top-menu__wrapper-right {
+        display: flex;
+        width: auto;
+        height: 88px;    
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    /* Основное меню Side-Menu */
+
+    /* Меню */
+
+    .side-menu__main {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .main_menu--no-margin {
+       margin: 0;
+    }
+
+    .menu--column {
+       flex-direction: column;
+    }
+
+    .menu__side-menu-link {
+       display: flex;
+       max-width: 200px;
+       align-items: center;
+       margin-bottom: 32px;
+    }
+
+    .menu__side-menu-link--active {
+        color: #7E7E82;
+    }
+
+    .menu__side-menu-link--active::before {
+        content: "";
+        position: absolute;
+        width: 4px;
+        height: 32px;
+        background-color: #41F6D7;
+        border-radius: 0 30% 30% 0;
+        left: 0;
+    }
+
+    /* Связь */
+
+    .connection {
+        margin-top: auto;
+    }
+
+    .connection__buttons {
+        display: flex;
+        width: 152px;   
+        justify-content: space-between;;  
+        margin-bottom: 16px;            
+    }
+
+    .connection__buttons .button-menu--profile {
+        margin-right: 0;  
+    }
+
+    .connection__email-link {
+        display: flex;
+        height: auto;
+        margin-bottom: 12px;
+    }
+
+    .connection__phone-link {
+        display: flex;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 32px;
+        letter-spacing: -0.6px;
+        margin-bottom: 40px;
+    }
+    
+    /* Смена языка */
+
+    .side-menu__language-selection {
+        display: flex;
+        margin-top: auto;
+    }
+
+    .side-menu__link {
+        margin-right: 7px;
+    }
+
+    .side-menu__link--active {
+        color: #7E7E82;
     }
 
 }
@@ -326,20 +512,11 @@ button {
         margin-right: 140px;
     }
 
-    .button-menu--button-checkstatus {
+    .button-menu--checkstatus {
         background-image: url("../icons/checkstatus.svg");
         margin-right: 8px;  
     }
-    .button-menu--button-call {
-        background-image: url("../icons/call.svg");
-    }
-    .button-menu--button-chat {
-        background-image: url("../icons/chat.svg");
-    }
-    .button-menu--button-profile {
-        background-image: url("../icons/profile.svg");
-        margin-right: 4px;  
-    }
+
 
     /* Меню Main */
 
@@ -355,7 +532,7 @@ button {
         margin-bottom: 32px;
     }
 
-    .button-menu--button-repair {
+    .button-menu--repair {
         background-image: url("../icons/repair.svg");
         margin-left: 4px;
     }
@@ -363,10 +540,11 @@ button {
         margin-left: 24px;
     }
 
-    .menu__fade {
+    .main__fade {
         position: absolute;
         width: 20px;
         height: 40px;
+        top: 184px;
         right: 0;
         background-image: url('../icons/fade-big.png');  
     }
@@ -501,20 +679,9 @@ button {
     }
 
     .menu__link {
-        padding: 6px 25px 6px 12px;
+        padding: 6px 23px 6px 12px;
+        
     }
-
-    .menu__link:focus {
-        background-color: #fff;
-        outline: 2px solid #B8FFEC;
-        border-radius: 6px;  
-    }
-
-    .menu__link:hover {
-        background-color: #fff;
-        outline: 2px solid #B8FFEC;
-        border-radius: 6px;
-    }      
 
     /* О компании */
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="fr">
   <head>
     <title>Услуги и сервисы</title>
     <link rel="stylesheet" href=".\css\style.css">
@@ -10,25 +10,25 @@
     <meta name="keywords" content="Ремонт техники, обслуживание техники, cрочный ремонт, dell, ноутбуков, планшетов, наушников, моноблоков, проекторов, компьютеров, принтеров, мониторов, серверов">
   </head>
   <body>
-    <header class="header">
+   <!-- <header class="header">
       <nav class="upper-menu">
         <div class="upper-menu__wrapper-left">
-          <button aria-label="Боковое меню" class="button-menu button-menu--button-burger" type="button">
+          <button aria-label="Боковое меню" class="button-menu button-menu--open-burger" type="button">
           </button>
-          <a class="upper-menu__logo" href="#"><img src=".\icons\logo.svg" alt="Логотип компании CPS"></a>
+          <a class="logo" href="#"><img src=".\icons\logo.svg" alt="Логотип компании CPS"></a>
         </div>
         <div class="upper-menu__wrapper-center">
-          <button aria-label="Позвонить нам" class="button-menu button-menu--button-call" type="button">
+          <button aria-label="Позвонить нам" class="button-menu button-menu--call" type="button">
           </button>
-          <button aria-label="Написать сообщение" class="button-menu button-menu--button-chat" type="button">
+          <button aria-label="Написать сообщение" class="button-menu button-menu--chat" type="button">
           </button>
-          <button aria-label="Профиль" class="button-menu button-menu--button-profile" type="button">
+          <button aria-label="Профиль" class="button-menu button-menu--profile" type="button">
           </button>
         </div>
         <div class="upper-menu__wrapper-right">
-          <button aria-label="Оставить заявку" class="button-menu button-menu--button-repair" type="button">
+          <button aria-label="Оставить заявку" class="button-menu button-menu--repair" type="button">
           </button>
-          <button  aria-label="Узнать статус ремонта" class="button-menu button-menu--button-checkstatus" type="button">
+          <button  aria-label="Узнать статус ремонта" class="button-menu button-menu--checkstatus" type="button">
           </button>
         </div>
       </nav>
@@ -40,23 +40,25 @@
         </div>
         <div class="main-title__wrapper-repair">
           <span class="main-title__text">Оставить заявку</span>
-          <button class="button-menu button-menu--button-repair">
+          <button class="button-menu button-menu--repair">
           </button>
         </div>   
         <div class="main-title__wrapper-checkstatus">
           <span class="main-title__text">Статус ремонта</span>
-          <button class="button-menu button-menu--button-checkstatus">
+          <button class="button-menu button-menu--checkstatus">
           </button>
         </div>
       </div>      
-      <nav class="main__menu menu">
-        <a class="menu__link link" href="#">Ремонтируемые бренды</a>
-        <a class="menu__link link" href="#">Ремонтируемые устройства</a>
-        <a class="menu__link link" href="#">Цены на услуги</a>
-        <a class="menu__link link" href="#">Адреса сервисных центров</a>
-        <a class="menu__link link" href="#">Специальные цены</a>
-        <a class="menu__link link" href="#">Отзывы</a>
-        <div class="menu__fade"></div>
+      <nav class="main__menu">
+        <ul class="menu">
+        <li><a class="menu__link link menu__link--active" href="#">Ремонтируемые бренды</a></li>
+        <li><a class="menu__link link" href="#">Ремонтируемые устройства</a></li>
+        <li><a class="menu__link link" href="#">Цены на услуги</a></li>
+        <li><a class="menu__link link" href="#">Адреса сервисных центров</a></li>
+        <li><a class="menu__link link" href="#">Специальные цены</a></li>
+        <li><a class="menu__link link" href="#">Отзывы</a></li>
+        </ul>
+        <div class="main__fade"></div>
       </nav>
       <section class="main__content content">
         <div class="content__wrapper-left">
@@ -68,10 +70,52 @@
         <div class="content__wrapper-right">
           <img class="content__image " src="..\img\cps-logo.jpg" alt="Логотип компании CPS салатового цвета"> 
         </div>
-      </section>
-    </main>
+      </section> 
+    </main>-->
+     <aside class="side-menu">
+      <nav class="side-menu__header top-menu">
+        <div class="top-menu__wrapper-left">
+          <button aria-label="Боковое меню" class="button-menu button-menu--close-burger" type="button">
+          </button>
+          <a class="logo" href="#"><img src=".\icons\logo.svg" alt="Логотип компании CPS"></a>
+        </div>
+        </div>
+        <div class="top-menu__wrapper-right">
+          <button  aria-label="Поиск" class="button-menu button-menu--search" type="button">
+          </button>
+        </div>
+      </nav>
+     <div class="side-menu__main">
+        <nav class="main_menu main_menu--no-margin">
+          <ul class="menu menu--column">
+          <li><a class="menu__side-menu-link link menu__side-menu-link--active" href="#">Ремонт техники</a></li>
+          <li><a class="menu__side-menu-link link" href="#">Услуги и сервисы</a></li>
+          <li><a class="menu__side-menu-link link" href="#">Корпоративным клиентам</a></li>
+          <li><a class="menu__side-menu-link link" href="#">Продавцам техники</a></li>
+          <li><a class="menu__side-menu-link link" href="#">Партнерам</a></li>
+          <li><a class="menu__side-menu-link link" href="#">Производителям</a></li>
+          <li><a class="menu__side-menu-link link" href="#">Наши сервисные центры</a></li>
+          <li><a class="menu__side-menu-link link" href="#">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="connection">
+          <div class="connection__buttons">
+            <button aria-label="Позвонить нам" class="button-menu button-menu--call" type="button">
+            </button>
+            <button aria-label="Написать сообщение" class="button-menu button-menu--chat" type="button">
+            </button>
+            <button aria-label="Профиль" class="button-menu button-menu--profile button-menu--profile" type="button">
+            </button>
+          </div>
+          <a class="connection__email-link link" href="mail@cps.com" aria-label="Отправить письмо" >mail@cps.com</a>
+          <a class="connection__phone-link link" href="tel:+78008908900"aria-label="Позвонить нам по номеру телефона: 8. 800. 890. 89. 00.">8 800 890 8900</a>
+        </div>   
+      </div>
+      <div class="side-menu__language-selection">
+        <a class="side-menu__link side-menu__link--active link" href="#" aria-label="Версия сайта на русском языке">RU</a>
+        <a class="side-menu__link link" lang="en" href="#" aria-label="Website version in english">EN</a>
+        <a class="side-menu__link link" lang="de-ch" href="#" aria-label="Schweizer Version der website">CH</a>
+      </div>
+    </aside> 
   </body>
 </html>
-
-
-
