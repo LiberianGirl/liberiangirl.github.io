@@ -13,7 +13,7 @@ html {
   /* Скрываем scrollbar для IE, Edge и Firefox */
 * {
     -ms-overflow-style: none;  /* IE и Edge */
-    scrollbar-color: transparent transparent ;/* Firefox */
+    scrollbar-color: transparent transparent;/* Firefox */
   }
 
 body {
@@ -74,7 +74,7 @@ button {
     }
     .upper-menu__wrapper-right {
         display: flex;
-        width: 134px;
+        width: 130px;
         height: 88px;    
         flex-wrap: nowrap;
         justify-content: space-evenly;
@@ -88,7 +88,9 @@ button {
         height: 32px;
         background-color: #EAEAEA;
         border-radius: 1px;
-        margin-right: 133px;
+        right: 133px;
+       
+
     }
 
     .logo {
@@ -126,9 +128,6 @@ button {
     .button-menu--close-burger {
         background-image: url("../icons/close-burger.svg");
     }
-    .button-menu--button-burger {
-        background-image: url("../icons/burger.svg");
-    }
     .button-menu--call {
         background-image: url("../icons/call.svg");
     }
@@ -137,11 +136,9 @@ button {
     }
     .button-menu--profile {
         background-image: url("../icons/profile.svg");
-        margin-right: 4px;  
     }
     .button-menu--repair {
         background-image: url("../icons/repair.svg");
-        margin-left: 4px;
     }
     .button-menu--checkstatus {
         background-image: url("../icons/checkstatus.svg");
@@ -218,8 +215,7 @@ button {
         
     }
     .main__menu {
-        margin-left: 16px;
-        margin-bottom: 7px;
+        margin: 0 0 24px 16px;
     }
     
     .link {
@@ -290,64 +286,144 @@ button {
     .main__content {
         display: flex;   
         flex-direction: column;
+        margin: 0 0 18px 0;
     }
 
     .content__wrapper-left {
-        margin: 0 16px 16px 16px;
+        margin: 0 16px 0 16px;
     }
 
     .content__text {
-        height: 90px; 
         position: relative;
         font-style: 'TT Lakes', sans-serif;
         font-weight: normal;
         font-size: 14px;
         line-height: 18px;
         letter-spacing: 0.2px;
-        color: #1B1C21;
+        color: #1B1C21; 
+        margin-bottom: 20px;
+    }
+
+    .content__text--hidden {
+        height: 90px; 
         overflow: auto;
     }
-
-    .content__link {
-        display: inline-block;
-        color: #1B1C21;
-        position: relative;
-        margin: 16px 0 0 32px;
-    }
-
-    .content__link::before {
-        position: absolute;
-        content: "";
-        width: 8px;
-        height: 11px;
-        left: -24px;
-        top: 6px;
-        background-image: url("../icons/expand.svg");
-}
 
     .content__image {
         width: 100%;
         height: auto;
     }
 
+    .content__button {
+        display: flex;
+        flex-direction: row-reverse;
+        color: #1B1C21;
+        position: relative;
+        margin: 20px 0 20px 0px;
+    }
+
+    .content__button--hidden {
+        display: none;
+    }
+
+    .content__button-down {
+        box-sizing: border-box;
+        position: relative;
+        display: flex;
+        transform: scale(var(--ggs,1));
+        width: 30px;
+        height: 22px;
+    }
+    .content__button-down::after,
+    .content__button-down::before {
+        content: "";
+        display: flex;
+        box-sizing: border-box;
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-bottom: 2px solid #41F6D7;
+        border-right: 2px solid #41F6D7;
+        transform: rotate(45deg);
+        left: 8px;
+        top: 4px;
+    }
+    .content__button-down::after {
+        top: 10px
+    }
+
+    .content__button:hover .content__button-down::after,
+    .content__button:hover .content__button-down::before  {
+        border-color:#FF3E79;
+        transition: border-color 700ms linear; 
+    }
+
+  
+    /* Оверлай для бокового меню */
+
+    /*.overlay {
+        display: flex;
+        position: absolute;
+        z-index: 4;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: -100%; 
+        background-color: transparent;
+        transition-property: background-color, left;
+        transition-duration: 500ms 1s;
+    }
+
+    .overlay--active {
+
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+        transition-property: background-color, left;
+        transition-duration: 500ms 1s;
+
+    }*/
+
+
+
     /* Боковое меню (Side-Menu)*/
 
     .side-menu {
         display: flex;
         flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: -120%;
         width: 320px;
         height: 100%;
-        position: absolute;
-        z-index: 5;
         background: white;
-        top: 0;
-        left: 0;
         padding: 0 24px 32px 24px;
-        box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 
-                     16px 0px 52px rgba(14, 24, 80, 0.2);
         overflow: hidden;
+        box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 
+        16px 0px 52px rgba(14, 24, 80, 0.2);
+        transition-property: left;
+        transition-duration: 1.2s;
         }
 
+    .side-menu--open {
+        display: flex;
+        flex-direction: column;
+        width: 320px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: white;
+        padding: 0 24px 32px 24px;
+        overflow: hidden;
+        box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 
+        16px 0px 52px rgba(14, 24, 80, 0.2);
+        transition-property: left;
+        transition-duration: 1s;
+    
+        
+
+    }
+
+  
     /* Верхнее меню Side-Menu */
 
     .top-menu {
@@ -428,10 +504,7 @@ button {
         margin-bottom: 16px;            
     }
 
-    .connection__buttons .button-menu--profile {
-        margin-right: 0;  
-    }
-
+   
     .connection__email-link {
         display: flex;
         height: auto;
@@ -462,7 +535,79 @@ button {
         color: #7E7E82;
     }
 
+    /* Раздел брэндов */
+    
+    /* Заголовок брэндов */
+
+    .content--brands-off {
+        display: none;
+    }
+
+    .content__wrapper {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-content: center;
+    }
+    .content__header {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        min-height: 56px;
+        max-height: 80px;
+        border-top: 1px solid #D9FFF5;
+        border-radius: 1px;
+        background-image: linear-gradient(90deg, #F8F8F8 2%, #FFFFFF 98%);
+        margin: 0 0 16px 0;
+    }
+
+    .content__header-title {
+        align-self: center;
+        font-style: 'TT Lakes', sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        text-transform: uppercase;
+        color: #7E7E82;
+        padding: 16px 0 16px 16px;
+    }
+    /* Список брэндов */
+
+    .brands__link {
+        display: flex;
+        justify-content: space-between;
+        width: 240px;
+        height: auto;
+    }
+
+    .brands__img {
+        align-self: center;
+    }
+
+    /* Кнопка в брэнде */
+
+    .brands__button-arrow {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        align-self: center;
+        justify-content: flex-end;
+        background: url('../icons/go-to-rigth.png') no-repeat center / 40px 40px #FF3E79 ;
+        background-position: right;
+        border-radius: 50%;
+    }
+
+    .brands__link:hover .brands__button-arrow {
+        opacity: 0.4;
+        transition-property: opacity;
+        transition-duration: 500ms;
+    }
+
+
 }
+
+
 
 
 @media (min-width: 768px) {
@@ -497,10 +642,13 @@ button {
         justify-content: space-evenly;
         margin-left: auto;
         align-items: center;
+        padding: 0 6px 0 0;
     }
 
     .upper-menu__wrapper-right {
         width: 142px;
+        padding: 0 8px 0 5px;
+        
     }    
     .upper-menu__wrapper-right::after {
         content: "";
@@ -509,14 +657,8 @@ button {
         height: 32px;
         background-color: #EAEAEA;
         border-radius: 1px;
-        margin-right: 140px;
+        right: 141px;
     }
-
-    .button-menu--checkstatus {
-        background-image: url("../icons/checkstatus.svg");
-        margin-right: 8px;  
-    }
-
 
     /* Меню Main */
 
@@ -532,12 +674,9 @@ button {
         margin-bottom: 32px;
     }
 
-    .button-menu--repair {
-        background-image: url("../icons/repair.svg");
-        margin-left: 4px;
-    }
     .main__menu {
         margin-left: 24px;
+        margin-bottom: 24px;
     }
 
     .main__fade {
@@ -552,9 +691,10 @@ button {
     /* О компании*/
 
     .main__content { 
+        height: auto;
         flex-direction: row;
         justify-content: space-between;  
-        margin: 15px 24px 0 24px;            
+        margin: 32px 24px 24px 24px;            
     }
 
     .content__wrapper-left {
@@ -563,15 +703,22 @@ button {
     }
 
     .content__text {
+        line-height: 20px;
+        margin-bottom: 0;
+        
+    }
+
+    .content__text--hidden {
         height: 160px;
         line-height: 20px;
+        overflow: hidden;
+        
     }
-    
+
     .content__link {
          margin: 10px 0 0 32px;
     }
 
-    
     .content__link::before {
         position: absolute;
         content: "";
@@ -593,15 +740,89 @@ button {
         border-radius: 5px;
     }
 
+        
+    /* Раздел брэндов */
+
+    /* Заголовок брэндов */
+
+    .content__header {
+        margin: 0 0 24px 0;
+    }
+
+    .content__header-title {
+        padding: 16px 0 16px 24px;
+    }
+
+    /* Список брэндов */
+
+    .content__brands {
+        margin-left: 24px;
+    }
+    
+    .brands__list {
+        display: flex;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 16px 24px;
+        margin: 0 0 16px 0;
+        overflow:auto;     
+    }
+
+
+    .brands__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 224px;
+        height: 72px;
+        background-color:#ffffff;
+        border: 1px solid #EAEAEA;
+        border-radius: 6px;
+        padding: 0 16px 0 16px;
+    }
+
+    .brands__link {
+        display: flex;
+        justify-content: space-between;
+        width: 240px;
+        height: auto;
+        background-color: transparent;
+    }
+
+
+    .brands__list--hidden {
+        height: 160px; 
+        overflow: hidden;
+    }
+
+    /* Показать все */
+    .brands .content__button {
+        display: flex;
+    }
+
+    .content--swiper-off {
+        display: none;
+    }
+
+    .content--brands-off {
+        display: flex;
+    }
+
+
 }
 
 
 
 @media (min-width: 1120px) {
 
+
     body {
         max-width: 1120px;
         margin: auto;
+        border: 1px solid #EAEAEA;
     }
 
     /* Верхнее меню */
@@ -622,9 +843,7 @@ button {
     .main-title__wrapper-title {
         display: flex;
         width: 236px;
-        margin-top: 42px;
-        margin-left: 32px;
-        margin-bottom: 8px;
+        margin: 42px 0 0 32px;
     }
 
     .main-title__h1::before {
@@ -637,14 +856,18 @@ button {
         left: 0px;
     }
 
+    /* Кнопки заголовка Main */
+
     .main-title__wrapper-repair {
         display: flex;
         width: 172px;
         height: 40px;
         align-items: center;
+        flex-direction: row-reverse;
         justify-content: space-between;
         margin-left: auto;
         margin-top: 32px;
+    
     }
 
     .main-title__wrapper-checkstatus {
@@ -652,20 +875,52 @@ button {
         width: 176px;
         height: 40px;
         align-items: center;
+        flex-direction: row-reverse;
         justify-content: space-between;
         margin-top: 32px;
         margin-right: 24px;
         margin-left: 32px;
     }
 
-    .main-title__text  {
+    .main-title__text {
         font-style: 'TT Lakes', sans-serif;
         font-size: 16px;
         font-weight: 500;
         line-height: 24px;
-        letter-spacing: -0.2px;;
+        letter-spacing: -0.2px;
+        cursor: pointer;
+        color: #1B1C21;  
     }
 
+    .main-title__text--repair::after {
+        content: "Оставить заявку";
+        position: absolute;
+        margin-left: -130px;
+        align-self: center;
+    }
+
+    .main-title__text--checkstatus::after {
+        content: "Статус ремонта";
+        position: absolute;
+        margin-left: -125px;
+        align-self: center;
+    }
+
+    .main-title__text--repair:hover::after,
+    .main-title__text--checkstatus:hover::after {
+        color: #FF3E79;
+        transition-property: color;
+        transition-duration: 500ms;
+    }
+
+    .main-title__text--repair:focus::after,
+    .main-title__text--checkstatus:focus::after {
+        color: #7E7E82;
+        transition-property: color;
+        transition-duration: 500ms; 
+    }
+   
+  
     /* Меню Main */
 
     .menu {
@@ -674,28 +929,61 @@ button {
     }
 
     .main__menu {
-        margin-left: 32px;
-        margin-bottom: 0;
+        margin: 8px 0 0 32px;
     }
 
     .menu__link {
-        padding: 6px 23px 6px 12px;
-        
+        padding: 6px 23px 6px 12px; 
     }
 
     /* О компании */
 
     .main__content {
-        margin: -7px 36px 0 34px;    
+        margin: -8px 28px 45px 34px;    
     }
 
     .content__wrapper-left {
-        margin: 8px 16px 0 0;
+        margin: 0 16px 0 0;
+        padding-top: 8px;
     }
 
     .content__wrapper-right {
-        margin-left: 24px;
+        margin: 0 0 0 24px;
     }
+
+    /* Раздел брэндов */
+
+    /* Заголовок брэндов */
+
+    .content__header-title {
+        padding: 16px 0 16px 32px;
+    }
+
+    /* Список брэндов */
+
+    .content__brands {
+        margin-left: 32px;
+    }
+    
+    .brands__list {
+        flex-wrap: wrap;
+        gap: 16px 32px;
+    }
+
+    .brands__item {
+        width: 240px;
+    }
+
+    .brands__list--hidden {
+        height: 160px; 
+        overflow: hidden;
+    }
+
+    /* Кнопка в брэнде */
+    .brands .content__button {
+        display: flex;
+    }
+
 
 
 }
