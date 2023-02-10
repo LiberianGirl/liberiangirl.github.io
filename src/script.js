@@ -46,20 +46,21 @@ buttonDown(buttonContent)*/
 
 
 /* Кнопка Показать/Скрыть */
-const buttonContentBrands_ = document.querySelector('.content__wrapper'); 
-/* находим раздел */ 
+
+/* находим раздел где находить кнопка */
+const contentWrapper = document.querySelector('.content__wrapper'); 
+/* нашли кнопку Показать/Скрыть */
+const swiperButton = contentWrapper.querySelector('.swiper__button'); 
+/* нашла блок свайпера */ 
 const contentBrands = document.querySelector('.swiper');
-/* нашли кнопку переключатель */
-const buttonContentBrands = buttonContentBrands_.querySelector('.swiper__button'); 
-/* нашли список с брэндами */
-const brandsList = contentBrands.querySelector('.swiper-wrapper')
-/* присвоили класс hidden*/
-const brandsListHidden = 'swiper-wrapper--hidden';
-
-
+/* нашли список слайдов в свайпере */
+const swiperWrapper = contentBrands.querySelector('.swiper-wrapper')
+/* класс hidden для списка свайпера*/
+const swiperWrapperHidden = 'swiper-wrapper--hidden';
 
 
 /* Функция Показать/Скрыть */
+
  const buttonShow = function (btn, content, list) {
  
   btn.addEventListener('click', function() {
@@ -73,9 +74,13 @@ const brandsListHidden = 'swiper-wrapper--hidden';
 
   });
 }
-/* переменная вызова функции для списка брэндов */
-const contentButtonShow = buttonShow(buttonContentBrands, brandsList, 
-  brandsListHidden);
+/* переменная вызова функции Показать/Скрыть */
+const contentButtonShow = buttonShow(swiperButton, swiperWrapper, 
+  swiperWrapperHidden);
+
+
+
+
 
 
 
