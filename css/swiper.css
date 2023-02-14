@@ -65,13 +65,33 @@
         color: #FF3E79;
         transition-property: color;
         transition-duration: 500ms;
-;
+
     }
     .link:focus {
         color: #7E7E82;
         transition-property: color;
         transition-duration: 500ms;   
     }
+
+    .content__button {
+        width: 100%;
+        display: flex;
+        margin: 0 0 16px 0;
+    }
+
+    .content__button::before {
+        content: "";
+        width: 8px;
+        height: 11px;
+        background: url('../icons/arrow-down.svg') no-repeat;
+        background-position: left;
+        margin: 6px 16px 0 8px;
+    }
+
+    .content__button {
+        display: none;
+    }
+
     /* Раздел брэндов */
     
     /* Заголовок брэндов */
@@ -100,82 +120,47 @@
         padding: 16px 0 16px 16px;
     }
 
-     /* Список брэндов Swiper*/
+    /* Список брэндов Swiper*/
 
-    .swiper {
-        display: flex;
-        justify-content: space-between;
+    .content-swiper {
+        position: relative;
         width: 100%;
-        height: 110px;
-        background-color: #F8F8F8;
-        padding-bottom: 16px;
-        margin-bottom: 38px;
+        height: auto;
     }
 
     .swiper-wrapper {
         display: flex;
-        height: auto;
-        flex-direction: row;
-        justify-content: flex-start;
-        flex-wrap: nowrap;  
-        row-gap: 16px;
+        width: auto;
         margin-left: 16px;
-        box-sizing: border-box;/**/
+        flex-wrap: nowrap;
+        padding-bottom: 34px;
     }
 
-    .swiper-slide {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 240px;
-        height: 72px;
-        background-color: #ffffff;
-        border: 1px solid #EAEAEA;
-        border-radius: 6px;
-        padding: 0 16px 0 16px;   
-    }
-
-    .swiper-pagination {
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
+    .content-slide {
         width: auto;
     }
-
-    .swiper-pagination-bullet {
-        background-color: #DDDDDD;
-        opacity: 1;
-    }
-
-    .swiper-pagination-bullet-active {
-        background-color: #B5B6BC;
-    }
-
-    .swiper-button-prev,
-    .swiper-button-next {
+ 
+    .content-swiper__fade-left,
+    .content-swiper__fade-rigth {
         position: absolute;
         height: 72px;
         width: 24px;
         z-index: 5;
         background-image: linear-gradient(-270deg, #F8F8F8 17%, transparent);
-        top: 20px;
         left:0;
+        top: 0;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .swiper-button-next {
+    .content-swiper__fade-rigth {
         background-image: linear-gradient(270deg, #F8F8F8 17%, transparent);
         right: 0;
         left: auto;
     }
     
-    .swiper-button-next::after, .swiper-button-prev::after {
-        content: "";
-    }
-
-    .swiper__button-arrow {
+    .content-slide__button-arrow {
         display: flex;
         width: 40px;
         height: 40px;
@@ -186,31 +171,61 @@
         border-radius: 50%;
     }
 
-    .swiper__link {
+   .content-slide__link {
         display: flex;
         justify-content: space-between;
-        width: inherit;
-        height: auto;
+        width: 206px;
+        height: 70px;
+        background-color: #ffffff;
+        border: 1px solid #EAEAEA;
+        border-radius: 6px;
+        padding: 0 16px 0 16px;  
     }
 
-    .swiper__link:hover .swiper__button-arrow {
+    .content-slide__link:hover .content-slide__button-arrow {
         opacity: 0.4;
         transition-property: opacity;
         transition-duration: 500ms;
     }
 
-    .swiper__img {
+    .content-slide__img {
         align-self: center;
     }
 
-    .swiper__button {
+    .content__wrapper .content__button {
         display: none;
     }
+
+    .content-swiper .swiper-pagination {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .swiper-pagination-bullet,
+    .swiper-pagination-bullet-active {
+        width: 12px;
+        height: 12px;
+        background-color: #DDDDDD ;
+        opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: #B5B6BC ;
+    }
+
+   
 
 }
 
 
 @media (min-width: 768px) {
+
+    .content__button {
+        margin-top: 16px;
+    }
+
+     /* Раздел брэндов */
 
     /* Заголовок брэндов */
 
@@ -224,77 +239,49 @@
 
     /* Список брэндов Swiper */
 
-    .swiper {
-        height: auto;
-        margin-bottom: 8px;
-        
-    }
-    
     .swiper-wrapper {
         flex-wrap: wrap;
-        margin: 0 0 0 24px;
-        overflow: visible;     
+        margin-left: 24px;
+        overflow: visible; 
+        gap: 16px 24px; 
+        padding-bottom: 0;
     }
 
-    .swiper-slide  {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 224px;
-        height: 72px;
-        background-color:#ffffff;
-        border: 1px solid #EAEAEA;
-        border-radius: 6px;
-        padding: 0 16px 0 16px;
+    .content-slide__link {
+        width: 190px;
+    }
+
+    .swiper-wrapper--hidden {
+        height: 160px;    
+        overflow: hidden;
+    }
+
+    .content-swiper__fade-left,
+    .content-swiper__fade-rigth { 
+        display: none;
     }
 
     .swiper-pagination {
         display: none;
     }
 
-    .swiper-wrapper--hidden {
-        height: 160px; 
-        overflow: hidden;
-    }
-  
-    .swiper__button {
+    .content__wrapper .content__button {
         display: flex;
-        flex-direction: row-reverse;
-        color: #1B1C21;
-        position: relative;
-        margin: 0 0 20px 24px;
+        margin-left: 24px;
     }
 
-    .swiper__button-down {
-        box-sizing: border-box;
-        position: relative;
-        display: flex;
-        transform: scale(var(--ggs,1));
-        width: 30px;
-        height: 22px;
-    }
-    .swiper__button-down::after,
-    .swiper__button-down::before {
+    .content__wrapper .content__button::before {
         content: "";
-        display: flex;
-        box-sizing: border-box;
-        position: absolute;
-        width: 6px;
-        height: 6px;
-        border-bottom: 2px solid #41F6D7;
-        border-right: 2px solid #41F6D7;
-        transform: rotate(45deg);
-        left: 8px;
-        top: 4px;
-    }
-    .swiper__button-down::after {
-        top: 10px
-    }
+        transform: rotate(0deg);
+        transition-property: transform;
+        transition-duration: 500ms;
 
-    .swiper__button:hover .swiper__button-down::after,
-    .swiper__button:hover .swiper__button-down::before  {
-        border-color:#FF3E79;
-        transition: border-color 700ms linear; 
+    }
+    .content__wrapper .content__button--up::before {
+        content: "";
+        transform: rotate(-180deg);
+        transition-property: transform;
+        transition-duration: 500ms;
     }
 
 
@@ -302,6 +289,140 @@
 
 
 @media (min-width: 1120px) {
+
+   body {
+        max-width: 1120px;
+        margin: auto;
+    }
+
+    /* Верхнее меню */
+
+    .header {
+        display: none;
+    }
+
+    /* Заголовок Main */
+
+    .main-title {
+        display: flex;
+        width: 100%;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .main-title__wrapper-title {
+        display: flex;
+        width: 236px;
+        margin: 42px 0 0 32px;
+    }
+
+    .main-title__h1::before {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 40px;
+        background-color: #41F6D7;
+        border-radius: 2px;
+        left: 0px;
+    }
+
+    /* Кнопки заголовка Main */
+
+    .main-title__wrapper-repair {
+        display: flex;
+        width: 172px;
+        height: 40px;
+        align-items: center;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-top: 32px;
+    }
+
+    .main-title__wrapper-checkstatus {
+        display: flex;
+        width: 176px;
+        height: 40px;
+        align-items: center;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-top: 32px;
+        margin-right: 24px;
+        margin-left: 32px;
+    }
+
+    .main-title__text {
+        font-style: 'TT Lakes', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        cursor: pointer;
+        color: #1B1C21;  
+    }
+
+    .main-title__text--repair::after {
+        content: "Оставить заявку";
+        position: absolute;
+        margin-left: -130px;
+        align-self: center;
+    }
+
+    .main-title__text--checkstatus::after {
+        content: "Статус ремонта";
+        position: absolute;
+        margin-left: -125px;
+        align-self: center;
+    }
+
+    .main-title__text--repair:hover::after,
+    .main-title__text--checkstatus:hover::after {
+        color: #FF3E79;
+        transition-property: color;
+        transition-duration: 500ms;
+    }
+
+    .main-title__text--repair:focus::after,
+    .main-title__text--checkstatus:focus::after {
+        color: #7E7E82;
+        transition-property: color;
+        transition-duration: 500ms; 
+    }
+   
+  
+    /* Меню Main */
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;        
+    }
+
+    .main__menu {
+        margin: 8px 0 0 32px;
+    }
+
+    .menu__link {
+        padding: 6px 23px 6px 12px; 
+    }
+
+    /* О компании */
+
+    .main__content {
+        margin: -8px 28px 45px 34px;    
+    }
+
+    .content__wrapper-left {
+        margin: 0 16px 0 0;
+        padding-top: 8px;
+    }
+
+    .content__wrapper-right {
+        margin: 0 0 0 24px;
+    }
+
+    .content__button {
+        display: none;
+    }
 
     /* Раздел брэндов */
 
@@ -311,26 +432,24 @@
         padding: 16px 0 16px 32px;
     }
 
-    /* Список брэндов Swiper*/
+ /* Список брэндов Swiper */
 
     .swiper-wrapper {
-        margin: 0 0 0 32px;
+        flex-wrap: wrap;  
+        gap: 16px 32px; 
+        margin-left: 32px;
+        padding-bottom: 0;
     }
 
-    .swiper-slide {
-        width: 240px;
+    .content-slide__link {
+        width: 206px;
     }
 
-    .swiper-wrapper--hidden {
-        height: 160px; 
-        overflow: hidden;
-    }
-
-    .brands .swiper__button {
+    .content__wrapper .content__button {
         display: flex;
+        margin-left: 32px;
     }
 
-    .swiper__button {
-        margin: 0 0 20px 32px;
-    }
+
+
 }

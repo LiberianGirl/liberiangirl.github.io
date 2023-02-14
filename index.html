@@ -4,17 +4,17 @@
     <title>Услуги и сервисы</title>
     <link rel="icon" href="favicon.ico">
     <link rel="shortcut icon" href="favicon.ico">
-    <!--<link rel="stylesheet" href="./css/style.css">-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="./css/fonts.css">
-    <link rel="stylesheet" href="./css/swiper.css"/>
+    <!--<link rel="stylesheet" href="./css/style.css">-->
+    <link rel="stylesheet" href="./css/swiper.css">    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Мы являемся авторизованным сервисным центром по ремонту техники Dell. 
     Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.">
     <meta name="keywords" content="Ремонт техники, обслуживание техники, cрочный ремонт, dell, ноутбуков, 
     планшетов, наушников, моноблоков, проекторов, компьютеров, принтеров, мониторов, серверов">
-    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   </head>
   <body>
   <!--<header class="header">
@@ -70,9 +70,7 @@
           <p class="content__text content__text--hidden">Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.
           <br><br>
           Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.</p>
-            <button class="content__button" type="button"><span class="content__button-span link">Читать далее</span>
-            <div class="content__button-down"></div>
-            </button>
+          <button class="content__button link" type="button"><span>Читать далее</span></button>
         </div> 
         <div class="content__wrapper-right">
           <img class="content__image" src="..\img\cps-logo.jpg" alt="Логотип компании CPS салатового цвета"> 
@@ -81,118 +79,116 @@
     </main>
 
     <div class="overlay"></div>
-     <aside class="side-menu">
-      <nav class="side-menu__header top-menu">
-        <div class="top-menu__wrapper-left">
-          <button aria-label="Боковое меню" class="button-menu button-menu--close-burger" type="button">
-          </button>
-          <a class="logo" href="#"><img src=".\icons\logo.svg" alt="Логотип компании CPS"></a>
-        </div>
-        </div>
-        <div class="top-menu__wrapper-right">
-          <button  aria-label="Поиск" class="button-menu button-menu--search" type="button">
-          </button>
-        </div>
-      </nav>
-     
-     <div class="side-menu__main">
-        <nav class="main_menu main_menu--no-margin">
-          <ul class="menu menu--column">
-          <li><a class="menu__side-menu-link link menu__side-menu-link--active" href="#">Ремонт техники</a></li>
-          <li><a class="menu__side-menu-link link" href="#">Услуги и сервисы</a></li>
-          <li><a class="menu__side-menu-link link" href="#">Корпоративным клиентам</a></li>
-          <li><a class="menu__side-menu-link link" href="#">Продавцам техники</a></li>
-          <li><a class="menu__side-menu-link link" href="#">Партнерам</a></li>
-          <li><a class="menu__side-menu-link link" href="#">Производителям</a></li>
-          <li><a class="menu__side-menu-link link" href="#">Наши сервисные центры</a></li>
-          <li><a class="menu__side-menu-link link" href="#">Контакты</a></li>
-          </ul>
-        </nav>
-        <div class="connection">
-          <div class="connection__buttons">
-            <button aria-label="Позвонить нам" class="button-menu button-menu--call" type="button">
-            </button>
-            <button aria-label="Написать сообщение" class="button-menu button-menu--chat" type="button">
-            </button>
-            <button aria-label="Профиль" class="button-menu button-menu--profile button-menu--profile" type="button">
-            </button>
-          </div>
-          <a class="connection__email-link link" href="mail@cps.com" aria-label="Отправить письмо" >mail@cps.com</a>
-          <a class="connection__phone-link link" href="tel:+78008908900"aria-label="Позвонить нам по номеру телефона: 8. 800. 890. 89. 00.">8 800 890 8900</a>
-        </div>   
-      </div>
-      <div class="side-menu__language-selection">
-        <a class="side-menu__link side-menu__link--active link" href="#" aria-label="Версия сайта на русском языке">RU</a>
-        <a class="side-menu__link link" lang="en" href="#" aria-label="Website version in english">EN</a>
-        <a class="side-menu__link link" lang="de-ch" href="#" aria-label="Schweizer Version der website">CH</a>
-      </div>
-    </aside> -->
+    <aside class="side-menu">
+     <nav class="side-menu__header top-menu">
+       <div class="top-menu__wrapper-left">
+         <button aria-label="Боковое меню" class="button-menu button-menu--close-burger" type="button">
+         </button>
+         <a class="logo" href="#"><img src=".\icons\logo.svg" alt="Логотип компании CPS"></a>
+       </div>
+       </div>
+       <div class="top-menu__wrapper-right">
+         <button  aria-label="Поиск" class="button-menu button-menu--search" type="button">
+         </button>
+       </div>
+     </nav>
+    
+    <div class="side-menu__main">
+       <nav class="main_menu main_menu--no-margin">
+         <ul class="menu menu--column">
+         <li><a class="menu__side-menu-link link menu__side-menu-link--active" href="#">Ремонт техники</a></li>
+         <li><a class="menu__side-menu-link link" href="#">Услуги и сервисы</a></li>
+         <li><a class="menu__side-menu-link link" href="#">Корпоративным клиентам</a></li>
+         <li><a class="menu__side-menu-link link" href="#">Продавцам техники</a></li>
+         <li><a class="menu__side-menu-link link" href="#">Партнерам</a></li>
+         <li><a class="menu__side-menu-link link" href="#">Производителям</a></li>
+         <li><a class="menu__side-menu-link link" href="#">Наши сервисные центры</a></li>
+         <li><a class="menu__side-menu-link link" href="#">Контакты</a></li>
+         </ul>
+       </nav>
+       <div class="connection">
+         <div class="connection__buttons">
+           <button aria-label="Позвонить нам" class="button-menu button-menu--call" type="button">
+           </button>
+           <button aria-label="Написать сообщение" class="button-menu button-menu--chat" type="button">
+           </button>
+           <button aria-label="Профиль" class="button-menu button-menu--profile button-menu--profile" type="button">
+           </button>
+         </div>
+         <a class="connection__email-link link" href="mail@cps.com" aria-label="Отправить письмо" >mail@cps.com</a>
+         <a class="connection__phone-link link" href="tel:+78008908900"aria-label="Позвонить нам по номеру телефона: 8. 800. 890. 89. 00.">8 800 890 8900</a>
+       </div>   
+     </div>
+     <div class="side-menu__language-selection">
+       <a class="side-menu__link side-menu__link--active link" href="#" aria-label="Версия сайта на русском языке">RU</a>
+       <a class="side-menu__link link" lang="en" href="#" aria-label="Website version in english">EN</a>
+       <a class="side-menu__link link" lang="de-ch" href="#" aria-label="Schweizer Version der website">CH</a>
+     </div>
+   </aside>-->
+
+   
 
   <!--Свайпер-->
-
   <section class="content">
       <div class="content__wrapper">
         <div class="content__header"> 
           <h2 class="content__header-title">Ремонт техники различных брендов</h2>
         </div>
-        <div class="swiper mySwiper">
+        <div class="content-swiper" data-mobile="false">
           <ul class="swiper-wrapper swiper-wrapper--hidden">
-          <li class="swiper-slide"><a class="swiper__link" href="#">
-            <img class="swiper__img" src="../img/Brands/lenovo.png">
-              <div class="swiper__button-arrow"></div>
-          </a></li>
-          <li class="swiper-slide"><a class="swiper__link" href="#">
-            <img class="swiper__img" src="../img/Brands/samsung.png">
-            <div class="swiper__button-arrow"></div>
-          </a></li>
-          <li class="swiper-slide"><a class="swiper__link" href="#">
-            <img class="swiper__img" src="../img/Brands/apple.png">
-            <div class="swiper__button-arrow"></div>
-          </a></li>
-          <li class="swiper-slide"><a class="swiper__link" href="#">
-            <img class="swiper__img" src="../img/Brands/view-sonic.png">
-            <div class="swiper__button-arrow"></div>
-          </a></li>
-          <li class="swiper-slide"><a class="swiper__link" href="#">
-            <img class="swiper__img" src="../img/Brands/bosch.png">
-            <div class="swiper__button-arrow"></div>
-          </a></li>
-          <li class="swiper-slide"><a class="swiper__link" href="#">
-            <img class="swiper__img" src="../img/Brands/hp.png">
-            <div class="swiper__button-arrow"></div>
-          </a></li>
-          <li class="swiper-slide"><a class="swiper__link" href="#">
-            <img class="swiper__img" src="../img/Brands/acer.png">
-            <div class="swiper__button-arrow"></div>
-          </a></li>
-          <li class="swiper-slide"><a class="swiper__link" href="#">
-            <img class="swiper__img" src="../img/Brands/sony.png">
-            <div class="swiper__button-arrow"></div>
-          </a></li>
-          <li class="swiper-slide"><a class="swiper__link" href="#">
-            <img class="swiper__img" src="../img/Brands/logitech.png">
-            <div class="swiper__button-arrow"></div>
-          </a></li>
-          <li class="swiper-slide"><a class="swiper__link" href="#">
-            <img class="swiper__img" src="../img/Brands/hisense.png">
-            <div class="swiper__button-arrow"></div>
-          </a></li>
-          <li class="swiper-slide"><a class="swiper__link" href="#">
-            <img class="swiper__img" src="../img/Brands/dyson.png">
-            <div class="swiper__button-arrow"></div>
-          </a></li>
+            <li class="content-slide"><a class="content-slide__link" href="#">
+              <img class="content-slide__img" src="../img/brands/lenovo.png" alt="Логотип Lenovo">
+                <div class="content-slide__button-arrow"></div>
+            </a></li>
+            <li class="content-slide"><a class="content-slide__link" href="#">
+              <img class="content-slide__img" src="../img/brands/samsung.png" alt="Логотип Samsung">
+              <div class="content-slide__button-arrow"></div>
+            </a></li>
+            <li class="content-slide"><a class="content-slide__link" href="#">
+              <img class="content-slide__img" src="../img/brands/apple.png" alt="Логотип Apple">
+              <div class="content-slide__button-arrow"></div>
+            </a></li>
+            <li class="content-slide"><a class="content-slide__link" href="#">
+              <img class="content-slide__img" src="../img/brands/view-sonic.png" alt="Логотип View-Sonic">
+              <div class="content-slide__button-arrow"></div>
+            </a></li>
+            <li class="content-slide"><a class="content-slide__link" href="#">
+              <img class="content-slide__img" src="../img/brands/bosch.png" alt="Логотип Bosch">
+              <div class="content-slide__button-arrow"></div>
+            </a></li>
+            <li class="content-slide"><a class="content-slide__link" href="#">
+              <img class="content-slide__img" src="../img/brands/hp.png" alt="Логотип HP">
+              <div class="content-slide__button-arrow"></div>
+            </a></li>
+            <li class="content-slide"><a class="content-slide__link" href="#">
+              <img class="content-slide__img" src="../img/brands/acer.png" alt="Логотип Acer">
+              <div class="content-slide__button-arrow"></div>
+            </a></li>
+            <li class="content-slide"><a class="content-slide__link" href="#">
+              <img class="content-slide__img" src="../img/brands/sony.png" alt="Логотип Sony">
+              <div class="content-slide__button-arrow"></div>
+            </a></li>
+            <li class="content-slide"><a class="content-slide__link" href="#">
+              <img class="content-slide__img" src="../img/brands/logitech.png" alt="Логотип Logitech">
+              <div class="content-slide__button-arrow"></div>
+            </a></li>
+            <li class="content-slide"><a class="content-slide__link" href="#">
+              <img class="content-slide__img" src="../img/brands/hisense.png" alt="Логотип Hisense">
+              <div class="content-slide__button-arrow"></div>
+            </a></li>
+            <li class="content-slide"><a class="content-slide__link" href="#">
+              <img class="content-slide__img" src="../img/brands/dyson.png" alt="Логотип Dyson">
+              <div class="content-slide__button-arrow"></div>
+            </a></li>
           </ul>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="content-swiper__fade-left"></div>
+          <div class="content-swiper__fade-rigth"></div>
           <div class="swiper-pagination"></div>
-          </div>
-          <button class="swiper__button" type="button"><span class="swiper__button-span link">Показать все</span>
-            <div class="swiper__button-down"></div>
-          </button>
+        </div>
+        <button class="content__button" type="button"><span class="link">Показать все</span></button>
       </div>
     </section>
-    <script src="src/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="src/swiper.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/swiper.js"></script>
   </body>
 </html>

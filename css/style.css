@@ -89,8 +89,6 @@ button {
         background-color: #EAEAEA;
         border-radius: 1px;
         right: 133px;
-       
-
     }
 
     .logo {
@@ -160,8 +158,6 @@ button {
         transition-duration: 700ms;  
     }
 
-
-
     /* Main */
 
     .main {
@@ -212,7 +208,6 @@ button {
         flex-wrap: nowrap;
         justify-content: flex-start;
         overflow: scroll;
-        
     }
     .main__menu {
         margin: 0 0 24px 16px;
@@ -278,7 +273,6 @@ button {
         right: 0;
         top: 175px;
         background-image: url('../icons/fade.png');  
-        
     }
 
     /* О компании */
@@ -300,8 +294,8 @@ button {
         font-size: 14px;
         line-height: 18px;
         letter-spacing: 0.2px;
-        color: #1B1C21; 
-        margin-bottom: 20px;
+        color: #1B1C21;
+        margin-bottom: 16px;
     }
 
     .content__text--hidden {
@@ -315,75 +309,49 @@ button {
     }
 
     .content__button {
+        width: 100%;
         display: flex;
-        flex-direction: row-reverse;
-        color: #1B1C21;
-        position: relative;
-        margin: 20px 0 20px 0px;
+        margin: 0 0 16px 0;
+    }
+
+    .content__button::before {
+        content: "";
+        width: 8px;
+        height: 11px;
+        background: url('../icons/arrow-down.svg') no-repeat;
+        background-position: left;
+        margin: 6px 16px 0 8px;
     }
 
     .content__button--hidden {
         display: none;
     }
 
-    .content__button-down {
-        box-sizing: border-box;
-        position: relative;
-        display: flex;
-        transform: scale(var(--ggs,1));
-        width: 30px;
-        height: 22px;
-    }
-    .content__button-down::after,
-    .content__button-down::before {
-        content: "";
-        display: flex;
-        box-sizing: border-box;
-        position: absolute;
-        width: 6px;
-        height: 6px;
-        border-bottom: 2px solid #41F6D7;
-        border-right: 2px solid #41F6D7;
-        transform: rotate(45deg);
-        left: 8px;
-        top: 4px;
-    }
-    .content__button-down::after {
-        top: 10px
-    }
-
-    .content__button:hover .content__button-down::after,
-    .content__button:hover .content__button-down::before  {
-        border-color:#FF3E79;
-        transition: border-color 700ms linear; 
-    }
-
-  
     /* Оверлай для бокового меню */
 
-    /*.overlay {
+    .overlay {
         display: flex;
-        position: absolute;
-        z-index: 4;
         width: 100%;
         height: 100%;
+        position: absolute;
         top: 0;
         left: -100%; 
         background-color: transparent;
         transition-property: background-color, left;
-        transition-duration: 500ms 1s;
+        transition-duration: 100ms, 500ms;
+        z-index: 14;
     }
 
     .overlay--active {
-
+        display: flex;
+        width: 100%;
+        height: 110%;
         left: 0;
         background-color: rgba(255, 255, 255, 0.8);
         transition-property: background-color, left;
-        transition-duration: 500ms 1s;
-
-    }*/
-
-
+        transition-duration: 1s, 100ms;
+        z-index: 14;
+    }
 
     /* Боковое меню (Side-Menu)*/
 
@@ -402,7 +370,8 @@ button {
         16px 0px 52px rgba(14, 24, 80, 0.2);
         transition-property: left;
         transition-duration: 1.2s;
-        }
+        z-index: 15;
+    }
 
     .side-menu--open {
         display: flex;
@@ -418,9 +387,7 @@ button {
         16px 0px 52px rgba(14, 24, 80, 0.2);
         transition-property: left;
         transition-duration: 1s;
-    
-        
-
+        z-index: 15;
     }
 
   
@@ -504,7 +471,6 @@ button {
         margin-bottom: 16px;            
     }
 
-   
     .connection__email-link {
         display: flex;
         height: auto;
@@ -539,16 +505,6 @@ button {
     
     /* Заголовок брэндов */
 
-    .content--brands-off {
-        display: none;
-    }
-
-    .content__wrapper {
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: column;
-        align-content: center;
-    }
     .content__header {
         display: flex;
         width: 100%;
@@ -572,22 +528,48 @@ button {
         color: #7E7E82;
         padding: 16px 0 16px 16px;
     }
-    /* Список брэндов */
 
-    .brands__link {
-        display: flex;
-        justify-content: space-between;
-        width: 240px;
+    /* Список брэндов Swiper*/
+
+    .content-swiper {
+        position: relative;
+        width: 100%;
         height: auto;
     }
 
-    .brands__img {
-        align-self: center;
+    .swiper-wrapper {
+        display: flex;
+        width: auto;
+        margin-left: 16px;
+        flex-wrap: nowrap;
+        padding-bottom: 34px;
     }
 
-    /* Кнопка в брэнде */
+    .content-slide {
+        width: auto;
+    }
+ 
+    .content-swiper__fade-left,
+    .content-swiper__fade-rigth {
+        position: absolute;
+        height: 72px;
+        width: 24px;
+        z-index: 5;
+        background-image: linear-gradient(-270deg, #F8F8F8 17%, transparent);
+        left:0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-    .brands__button-arrow {
+    .content-swiper__fade-rigth {
+        background-image: linear-gradient(270deg, #F8F8F8 17%, transparent);
+        right: 0;
+        left: auto;
+    }
+    
+    .content-slide__button-arrow {
         display: flex;
         width: 40px;
         height: 40px;
@@ -598,12 +580,48 @@ button {
         border-radius: 50%;
     }
 
-    .brands__link:hover .brands__button-arrow {
+   .content-slide__link {
+        display: flex;
+        justify-content: space-between;
+        width: 206px;
+        height: 70px;
+        background-color: #ffffff;
+        border: 1px solid #EAEAEA;
+        border-radius: 6px;
+        padding: 0 16px 0 16px;  
+    }
+
+    .content-slide__link:hover .content-slide__button-arrow {
         opacity: 0.4;
         transition-property: opacity;
         transition-duration: 500ms;
     }
 
+    .content-slide__img {
+        align-self: center;
+    }
+
+    .content__wrapper .content__button {
+        display: none;
+    }
+
+    .content-swiper .swiper-pagination {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .swiper-pagination-bullet,
+    .swiper-pagination-bullet-active {
+        width: 12px;
+        height: 12px;
+        background-color: #DDDDDD ;
+        opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: #B5B6BC ;
+    }
 
 }
 
@@ -624,6 +642,7 @@ button {
         align-items: center;
         padding-left: 24px;
     }
+
     .upper-menu__wrapper-left::after {
         content: "";
         position: absolute;
@@ -647,9 +666,9 @@ button {
 
     .upper-menu__wrapper-right {
         width: 142px;
-        padding: 0 8px 0 5px;
-        
-    }    
+        padding: 0 8px 0 5px;   
+    }   
+
     .upper-menu__wrapper-right::after {
         content: "";
         position: absolute;
@@ -705,27 +724,16 @@ button {
     .content__text {
         line-height: 20px;
         margin-bottom: 0;
-        
     }
 
     .content__text--hidden {
         height: 160px;
         line-height: 20px;
         overflow: hidden;
-        
     }
 
-    .content__link {
-         margin: 10px 0 0 32px;
-    }
-
-    .content__link::before {
-        position: absolute;
-        content: "";
-        width: 8px;
-        height: 11px;
-        left: -24px;
-        top: 6px;
+    .content__button {
+        margin-top: 16px;
     }
 
     .content__wrapper-right {
@@ -739,7 +747,6 @@ button {
         height: auto;
         border-radius: 5px;
     }
-
         
     /* Раздел брэндов */
 
@@ -753,63 +760,53 @@ button {
         padding: 16px 0 16px 24px;
     }
 
-    /* Список брэндов */
+    /* Список брэндов Swiper */
 
-    .content__brands {
-        margin-left: 24px;
-    }
-    
-    .brands__list {
-        display: flex;
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        justify-content: flex-start;
+    .swiper-wrapper {
         flex-wrap: wrap;
-        gap: 16px 24px;
-        margin: 0 0 16px 0;
-        overflow:auto;     
+        margin-left: 24px;
+        overflow: visible; 
+        gap: 16px 24px; 
+        padding-bottom: 0;
     }
 
-
-    .brands__item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 224px;
-        height: 72px;
-        background-color:#ffffff;
-        border: 1px solid #EAEAEA;
-        border-radius: 6px;
-        padding: 0 16px 0 16px;
+    .content-slide__link {
+        width: 190px;
     }
 
-    .brands__link {
-        display: flex;
-        justify-content: space-between;
-        width: 240px;
-        height: auto;
-        background-color: transparent;
-    }
-
-
-    .brands__list--hidden {
-        height: 160px; 
+    .swiper-wrapper--hidden {
+        height: 160px;    
         overflow: hidden;
     }
 
-    /* Показать все */
-    .brands .content__button {
-        display: flex;
-    }
-
-    .content--swiper-off {
+    .content-swiper__fade-left,
+    .content-swiper__fade-rigth { 
         display: none;
     }
 
-    .content--brands-off {
-        display: flex;
+    .swiper-pagination {
+        display: none;
     }
+
+    .content__wrapper .content__button {
+        display: flex;
+        margin-left: 24px;
+    }
+
+    .content__wrapper .content__button::before {
+        content: "";
+        transform: rotate(0deg);
+        transition-property: transform;
+        transition-duration: 500ms;
+
+    }
+    .content__wrapper .content__button--up::before {
+        content: "";
+        transform: rotate(-180deg);
+        transition-property: transform;
+        transition-duration: 500ms;
+    }
+
 
 
 }
@@ -818,11 +815,9 @@ button {
 
 @media (min-width: 1120px) {
 
-
     body {
         max-width: 1120px;
         margin: auto;
-        border: 1px solid #EAEAEA;
     }
 
     /* Верхнее меню */
@@ -867,7 +862,6 @@ button {
         justify-content: space-between;
         margin-left: auto;
         margin-top: 32px;
-    
     }
 
     .main-title__wrapper-checkstatus {
@@ -951,6 +945,10 @@ button {
         margin: 0 0 0 24px;
     }
 
+    .content__button {
+        display: none;
+    }
+
     /* Раздел брэндов */
 
     /* Заголовок брэндов */
@@ -959,31 +957,24 @@ button {
         padding: 16px 0 16px 32px;
     }
 
-    /* Список брэндов */
+ /* Список брэндов Swiper */
 
-    .content__brands {
+    .swiper-wrapper {
+        flex-wrap: wrap;  
+        gap: 16px 32px; 
+        margin-left: 32px;
+        padding-bottom: 0;
+    }
+
+    .content-slide__link {
+        width: 206px;
+    }
+
+    .content__wrapper .content__button {
+        display: flex;
         margin-left: 32px;
     }
     
-    .brands__list {
-        flex-wrap: wrap;
-        gap: 16px 32px;
-    }
-
-    .brands__item {
-        width: 240px;
-    }
-
-    .brands__list--hidden {
-        height: 160px; 
-        overflow: hidden;
-    }
-
-    /* Кнопка в брэнде */
-    .brands .content__button {
-        display: flex;
-    }
-
 
 
 }
