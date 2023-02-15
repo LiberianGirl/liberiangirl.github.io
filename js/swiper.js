@@ -37,4 +37,3 @@ mobileSlider();
 window.addEventListener('resize', () => {
   mobileSlider();
 });
-
