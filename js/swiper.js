@@ -9,11 +9,6 @@ function mobileSlider() {
       slideClass: 'content-slide',
       spaceBetween: 16,
       slidesPerView: 'auto',
-      breakpoints: {
-        768: {
-          spaceBetween: 0,
-        }
-      },
       pagination: {
           el: '.swiper-pagination',
           clickable: true,
@@ -26,7 +21,7 @@ function mobileSlider() {
   if (window.innerWidth > 767 ) {
     slider.dataset.mobile = 'false';
 
-    if (slider.classList.contains('swiper-container-initialized')) {
+    if (slider.classList.contains('swiper-initialized')) {
       mySwiper.destroy();
     }  
   }
