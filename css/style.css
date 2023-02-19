@@ -23,6 +23,7 @@ body {
     margin: 0;
     padding: 0; 
     background-color: #F8F8F8;
+
 }
 * {
     margin: 0;
@@ -543,6 +544,7 @@ button {
         margin-left: 16px;
         flex-wrap: nowrap;
         padding-bottom: 34px;
+        overflow-x: visible;
     }
 
     .content-slide {
