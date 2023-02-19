@@ -538,17 +538,18 @@ button {
         height: auto;
     }
 
-    .swiper-wrapper {
+    .content-swiper__wrapper {
         display: flex;
         width: auto;
         margin-left: 16px;
         flex-wrap: nowrap;
         padding-bottom: 34px;
-        overflow-x: visible;
+        overflow: visible;
     }
 
     .content-slide {
         width: auto;
+        height: 72px;
     }
  
     .content-swiper__fade-left,
@@ -625,6 +626,8 @@ button {
         background-color: #B5B6BC ;
     }
 
+
+   
 }
 
 
@@ -764,7 +767,7 @@ button {
 
     /* Список брэндов Swiper */
 
-    .swiper-wrapper {
+    .content-swiper__wrapper {
         flex-wrap: wrap;
         margin-left: 24px;
         overflow: visible; 
@@ -776,7 +779,7 @@ button {
         width: 190px;
     }
 
-    .swiper-wrapper--hidden {
+    .content-swiper__wrapper--hidden {
         height: 160px;    
         overflow: hidden;
     }
@@ -808,6 +811,8 @@ button {
         transition-property: transform;
         transition-duration: 500ms;
     }
+
+    
 
 
 
@@ -959,9 +964,9 @@ button {
         padding: 16px 0 16px 32px;
     }
 
- /* Список брэндов Swiper */
+    /* Список брэндов Swiper */
 
-    .swiper-wrapper {
+    .content-swiper__wrapper {
         flex-wrap: wrap;  
         gap: 16px 32px; 
         margin-left: 32px;
@@ -975,8 +980,9 @@ button {
     .content__wrapper .content__button {
         display: flex;
         margin-left: 32px;
-    }
-    
+    }    
+
+ 
 
 
 }

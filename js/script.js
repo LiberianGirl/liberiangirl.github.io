@@ -1,4 +1,4 @@
-/*const sideMenu = document.querySelector('.side-menu');
+const sideMenu = document.querySelector('.side-menu');
 const overlay = document.querySelector('.overlay');
 
 const btnOpenMenu = document.querySelector('.button-menu--open-burger'); 
@@ -33,13 +33,13 @@ document.addEventListener('keydown', function (evt) {
     overlay.classList.remove('overlay--active');
     
     }
-  });*/
+  });
 
 
 
 /* Кнопка Читать далее*/
 
-/*const buttonContent = document.querySelector('.content__button'); 
+const buttonContent = document.querySelector('.content__button'); 
 
  const buttonDown = function () {
 
@@ -53,7 +53,7 @@ document.addEventListener('keydown', function (evt) {
   });
 }
 
-buttonDown(buttonContent)*/
+buttonDown(buttonContent)
 
 
 
@@ -67,11 +67,11 @@ const contentWrapper = document.querySelector('.content__wrapper');
 /* нашли кнопку Показать/Скрыть */
 const contentButton = contentWrapper.querySelector('.content__button');
 /* класс hidden для кнопки*/ 
-const contentButtonHidden = 'content__button--up'; 
+const contentButtonUp = 'content__button--up'; 
 /* нашли список слайдов в свайпере */
-const swiperWrapper = document.querySelector('.swiper-wrapper')
+const contentSwiperWrapper = document.querySelector('.content-swiper__wrapper')
 /* класс hidden для списка свайпера*/
-const swiperWrapperHidden = 'swiper-wrapper--hidden';
+const contentSswiperWrapperHidden = 'content-swiper__wrapper--hidden';
 
 
 /* Функция Показать/Скрыть */
@@ -90,9 +90,9 @@ const swiperWrapperHidden = 'swiper-wrapper--hidden';
     content.classList.toggle(list); //переключатель
   });
 }
-/* переменная вызова функции Показать/Скрыть */
-const swiperButtonShow = buttonShow(contentButton, contentButtonHidden, swiperWrapper, 
-  swiperWrapperHidden);
+
+buttonShow(contentButton, contentButtonUp, contentSwiperWrapper, 
+  contentSswiperWrapperHidden);
 
 
 
