@@ -506,6 +506,10 @@ button {
     
     /* Заголовок брэндов */
 
+    .content {
+        overflow: hidden;
+    }
+
     .content__header {
         display: flex;
         width: 100%;
@@ -635,6 +639,7 @@ button {
 
 @media (min-width: 768px) {
 
+
     /*Верхнее меню */
 
     .upper-menu__wrapper-left {
@@ -714,6 +719,7 @@ button {
 
     /* О компании*/
 
+
     .main__content { 
         height: auto;
         flex-direction: row;
@@ -756,6 +762,7 @@ button {
     /* Раздел брэндов */
 
     /* Заголовок брэндов */
+    
 
     .content__header {
         margin: 0 0 24px 0;
