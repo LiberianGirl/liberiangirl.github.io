@@ -1,13 +1,20 @@
-const slider = document.querySelector('.swiper');
-const screenWidth = document.documentElement.clientWidth;
+//const swiperArray = document.querySelectorAll('.swiper');
+//const swiperBrands = swiperArray[0]; 
+//const swiperDevices = swiperArray[1];
+const swiperBrands = sectionContent[1].querySelector('.swiper');
+const swiperDevices = sectionContent[2].querySelector('.swiper');
+const swiperServices = sectionContent[3].querySelector('.swiper');
 
 
-console.log(screenWidth)
-let mySwiper;
+let sliderBrands; 
+let sliderDevices;
+let sliderServices;
 
 function mobileSlider() {
-  if (window.innerWidth <= 767 && slider.dataset.mobile == 'false') {
-    mySwiper = new Swiper(slider, {
+  if ((window.innerWidth <= 767) && swiperBrands.dataset.mobile == 'false' &&
+   swiperDevices.dataset.mobile == 'false' /*&& swiperServices.dataset.mobile == 'false' */) {
+    
+    sliderBrands = new Swiper(swiperBrands, {
       spaceBetween: 16,
       slidesPerView: 'auto',
       pagination: {
@@ -16,14 +23,41 @@ function mobileSlider() {
           }
     });
 
-    slider.dataset.mobile = 'true';
+    sliderDevices = new Swiper(swiperDevices, {
+      spaceBetween: 16,
+      slidesPerView: 'auto',
+      pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          }
+    });
+
+    sliderServices = new Swiper(swiperServices, {
+      spaceBetween: 16,
+      slidesPerView: 'auto',
+      pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          enabled: true,
+          }
+    });
+
+    swiperBrands.dataset.mobile = 'true';
+    swiperDevices.dataset.mobile = 'true';
+    swiperServices.dataset.mobile = 'true';
   }
 
   if (window.innerWidth >= 768 ) {
-    slider.dataset.mobile = 'false';
+    swiperBrands.dataset.mobile = 'false';
+    swiperDevices.dataset.mobile = 'false';
+    swiperServices.dataset.mobile = 'false';
 
-    if (slider.classList.contains('swiper-initialized')) {
-      mySwiper.destroy();
+    if (swiperBrands.classList.contains('swiper-initialized') && 
+    swiperDevices.classList.contains('swiper-initialized') && 
+    swiperServices.classList.contains('swiper-initialized')) {
+      sliderBrands.destroy();
+      sliderDevices.destroy();
+      sliderServices.destroy();
     }  
   }
 }
@@ -33,6 +67,3 @@ mobileSlider();
 window.addEventListener('resize', () => {
   mobileSlider();
 });
-//if ((window.innerWidth || screenWidth) <= 767 && slider.dataset.mobile == 'false') {
-
-//if ((window.innerWidth || screenWidth) > 767 ) {
