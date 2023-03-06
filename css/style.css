@@ -373,7 +373,6 @@ a {
     width: 100%;
     min-width: 320px;
     max-width: 100%;
-    min-height: 676px;
     height: 100%;
     flex-direction: column;
     top: 0;
@@ -429,6 +428,10 @@ a {
 /* Основное меню Side-Menu */
 
 /* Меню */
+
+.side-menu__main {
+    margin-bottom: 32px;
+}
 
 .side-menu__main .menu {
     display: flex;
@@ -1029,10 +1032,6 @@ a {
 
     .side-menu__wrapper, .side-menu__wrapper--open {
         width: 320px;
-    }
-
-    .side-menu__main {
-        margin-bottom: 32px;
     }
 
     .side-menu__main .menu {
